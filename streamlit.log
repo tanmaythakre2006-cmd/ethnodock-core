@@ -1,0 +1,20 @@
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+
+2026-06-25 11:24:11.015 Uvicorn server started on 0.0.0.0:3000
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:3000
+  Network URL: http://192.168.0.2:3000
+  External URL: http://34.29.198.103:3000
+
+/app/core/cognitive_rag.py:2: FutureWarning:
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
