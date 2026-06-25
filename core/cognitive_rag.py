@@ -16,7 +16,6 @@ def extract_methodology(text_chunk: str, api_key: str) -> dict:
         return {"error": "Missing text or API key"}
 
     try:
-        genai.configure(api_key=api_key)
         model = genai.GenerativeModel('gemini-1.5-flash')
 
         prompt = (
@@ -26,7 +25,7 @@ def extract_methodology(text_chunk: str, api_key: str) -> dict:
             f"Text: {text_chunk}"
         )
 
-        response = model.generate_content(prompt)
+        response = model.generate_content(prompt, request_options={"api_key": api_key})
         text = response.text.strip()
 
         if text.startswith("```json"):
@@ -37,6 +36,9 @@ def extract_methodology(text_chunk: str, api_key: str) -> dict:
             text = text[:-3]
         text = text.strip()
 
-        return json.loads(text)
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError:
+            return {"error": "LLM failed to output valid JSON", "raw_output": text}
     except Exception as e:
         return {"error": str(e)}

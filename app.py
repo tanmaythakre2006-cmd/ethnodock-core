@@ -6,6 +6,11 @@ from core.cognitive_rag import extract_methodology
 def main():
     st.set_page_config(layout="wide")
 
+    if 'cleaned_text' not in st.session_state:
+        st.session_state.cleaned_text = ""
+    if 'methodology' not in st.session_state:
+        st.session_state.methodology = None
+
     with st.sidebar:
         api_key = st.text_input("Enter Gemini API Key", type="password")
         st.warning("Keys are stored strictly in volatile session memory.")
@@ -17,17 +22,20 @@ def main():
 
     if st.button("Test Proxy Sieve"):
         raw_html = fetch_via_proxy(target_url)
-        cleaned_text = clean_html_payload(raw_html)
+        st.session_state.cleaned_text = clean_html_payload(raw_html)
 
         st.success("Extraction Complete")
 
-        with st.expander("Raw Parsed Text"):
-            st.text(cleaned_text[:1000])
-
         if api_key:
             with st.spinner("Initiating Cognitive Sieve..."):
-                methodology = extract_methodology(cleaned_text, api_key)
-                st.json(methodology)
+                st.session_state.methodology = extract_methodology(st.session_state.cleaned_text, api_key)
+
+    if st.session_state.cleaned_text:
+        with st.expander("Raw Parsed Text"):
+            st.text(st.session_state.cleaned_text[:1000])
+
+    if st.session_state.methodology:
+        st.json(st.session_state.methodology)
 
 if __name__ == "__main__":
     main()
