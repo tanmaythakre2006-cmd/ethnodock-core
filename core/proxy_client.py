@@ -1,5 +1,9 @@
+import requests
+import streamlit as st
+
 PROXY_URL = "https://cors-proxy-worker.ethnodock-engine.workers.dev"
 
+@st.cache_data(ttl=3600)
 def fetch_via_proxy(target_url: str) -> str:
     """
     Fetches the content of a target URL via the proxy worker.
@@ -10,4 +14,13 @@ def fetch_via_proxy(target_url: str) -> str:
     Returns:
         str: The fetched content.
     """
-    pass
+    try:
+        response = requests.get(PROXY_URL, params={"url": target_url})
+        if response.status_code == 200:
+            return response.text
+        else:
+            st.error(f"Proxy returned non-200 status code: {response.status_code}")
+            return ""
+    except Exception as e:
+        st.error(f"Error fetching from proxy: {e}")
+        return ""
