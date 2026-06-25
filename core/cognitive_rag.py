@@ -1,5 +1,5 @@
 import json
-import google.generativeai as genai
+import requests
 
 def extract_methodology(text_chunk: str, api_key: str) -> dict:
     """
@@ -16,7 +16,8 @@ def extract_methodology(text_chunk: str, api_key: str) -> dict:
         return {"error": "Missing text or API key"}
 
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+        headers = {'Content-Type': 'application/json'}
 
         prompt = (
             "Read the following text and extract data into the exact JSON structure provided below. "
@@ -25,8 +26,27 @@ def extract_methodology(text_chunk: str, api_key: str) -> dict:
             f"Text: {text_chunk}"
         )
 
-        response = model.generate_content(prompt, request_options={"api_key": api_key})
-        text = response.text.strip()
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "temperature": 0.1,
+                "responseMimeType": "application/json"
+            }
+        }
+
+        response = requests.post(url, headers=headers, json=payload)
+
+        if response.status_code != 200:
+            return {"error": f"API Error {response.status_code}: {response.text}"}
+
+        data = response.json()
+
+        try:
+            raw_text = data['candidates'][0]['content']['parts'][0]['text']
+        except KeyError:
+            return {"error": "API returned unexpected structure", "raw_output": str(data)}
+
+        text = raw_text.strip()
 
         if text.startswith("```json"):
             text = text[7:]
