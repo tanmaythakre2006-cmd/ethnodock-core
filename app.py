@@ -2,6 +2,7 @@ import streamlit as st
 from core.proxy_client import fetch_via_proxy
 from core.sieve_parser import clean_html_payload
 from core.cognitive_rag import extract_methodology
+from database.supabase_client import save_extraction
 
 def main():
     st.set_page_config(layout="wide")
@@ -36,6 +37,15 @@ def main():
 
     if st.session_state.methodology:
         st.json(st.session_state.methodology)
+        if "error" not in st.session_state.methodology:
+            if st.button("💾 Save to EthnoDock Database"):
+                with st.spinner("Writing to permanent storage..."):
+                    save_result = save_extraction(st.session_state.methodology, target_url)
+                    if save_result.get("success"):
+                        st.success("Successfully saved to database!")
+                        st.balloons()
+                    else:
+                        st.error(f"Database Error: {save_result.get('error')}")
 
 if __name__ == "__main__":
     main()
