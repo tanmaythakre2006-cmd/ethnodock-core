@@ -29,7 +29,8 @@ def main():
 
         if api_key:
             with st.spinner("Initiating Cognitive Sieve..."):
-                st.session_state.methodology = extract_methodology(st.session_state.cleaned_text, api_key)
+                # Phase 3 Hardcode: pass in target herb name "Ashwagandha" and trusted state "True" for now
+                st.session_state.methodology = extract_methodology(st.session_state.cleaned_text, api_key, "Ashwagandha", True)
 
     if st.session_state.cleaned_text:
         with st.expander("Raw Parsed Text"):

@@ -1,30 +1,30 @@
 import re
 
-# Localized keyword lexicons
-BOTANICAL_TERMS = {
+# Pre-compile the regex patterns using re.compile at the module level
+BOTANICAL_PATTERNS = [re.compile(rf'\b{re.escape(term)}\b', re.IGNORECASE) for term in [
     "plant", "herb", "root", "leaf", "leaves", "stem", "flower", "seed", "bark", "extract",
     "taxonomy", "species", "genus", "family", "shrub", "tree", "botanical", "rhizome", "aerial"
-}
+]]
 
-PHARMA_TERMS = {
+PHARMA_PATTERNS = [re.compile(rf'\b{re.escape(term)}\b', re.IGNORECASE) for term in [
     "healing", "symptom", "mechanism", "treatment", "medicine", "efficacy", "clinical",
     "trial", "dosage", "compound", "phytochemical", "alkaloid", "flavonoid", "anti-inflammatory",
     "antioxidant", "therapeutic", "pharmacological", "pharmacology", "bioactive", "receptor",
     "inhibitor", "metabolism", "toxicity"
-}
+]]
 
-HISTORY_TERMS = {
+HISTORY_PATTERNS = [re.compile(rf'\b{re.escape(term)}\b', re.IGNORECASE) for term in [
     "ancient", "mythology", "cultural", "traditional", "provenance", "ayurveda", "tcm",
     "chinese medicine", "folk", "historical", "indigenous", "shamanic", "ritual", "tribe",
     "ethnobotany", "ethnobotanical", "heritage", "antiquity", "lore"
-}
+]]
 
-NOISE_TERMS = {
+NOISE_PATTERNS = [re.compile(rf'\b{re.escape(term)}\b', re.IGNORECASE) for term in [
     "buy now", "add to cart", "cookie policy", "privacy policy", "terms of service",
     "shopping cart", "checkout", "subscribe", "newsletter", "copyright", "all rights reserved",
     "click here", "read more", "advertisement", "sponsored", "sale", "discount", "promo code",
     "login", "sign up", "password", "accept cookies"
-}
+]]
 
 def chunk_text_sliding_window(text: str, window_size: int = 150, overlap: int = 50) -> list[str]:
     """
@@ -51,17 +51,17 @@ def chunk_text_sliding_window(text: str, window_size: int = 150, overlap: int = 
 
     return chunks
 
-def count_term_occurrences(text: str, terms: set) -> int:
+def count_term_occurrences(text: str, compiled_patterns: list) -> int:
     """
-    Counts how many of the given terms appear in the text as whole words or phrases.
+    Counts how many of the given pre-compiled terms appear in the text.
     """
     count = 0
-    for term in terms:
-        if re.search(rf'\b{re.escape(term)}\b', text):
+    for pattern in compiled_patterns:
+        if pattern.search(text):
             count += 1
     return count
 
-def calculate_chunk_score(chunk: str) -> float:
+def calculate_chunk_score(chunk: str, herb_name: str) -> float:
     """
     Calculates a Confidence Score for a chunk using a density approach.
     """
@@ -74,15 +74,21 @@ def calculate_chunk_score(chunk: str) -> float:
 
     word_count = len(words)
 
-    # Count occurrences of lexicon terms
-    botanical_count = count_term_occurrences(chunk_lower, BOTANICAL_TERMS)
-    pharma_count = count_term_occurrences(chunk_lower, PHARMA_TERMS)
-    history_count = count_term_occurrences(chunk_lower, HISTORY_TERMS)
-    noise_count = count_term_occurrences(chunk_lower, NOISE_TERMS)
+    # Count occurrences of lexicon terms using pre-compiled patterns
+    botanical_count = count_term_occurrences(chunk_lower, BOTANICAL_PATTERNS)
+    pharma_count = count_term_occurrences(chunk_lower, PHARMA_PATTERNS)
+    history_count = count_term_occurrences(chunk_lower, HISTORY_PATTERNS)
+    noise_count = count_term_occurrences(chunk_lower, NOISE_PATTERNS)
+
+    # Target Awareness: count occurrences of the specific herb_name
+    herb_occurrences = 0
+    if herb_name:
+        herb_pattern = re.compile(rf'\b{re.escape(herb_name.lower())}\b')
+        herb_occurrences = len(herb_pattern.findall(chunk_lower))
 
     # Weighting the scores
     # We want chunks that are dense in relevant terms.
-    positive_score = (botanical_count * 1.5) + (pharma_count * 2.0) + (history_count * 1.5)
+    positive_score = (botanical_count * 1.5) + (pharma_count * 2.0) + (history_count * 1.5) + (herb_occurrences * 5.0)
 
     # Density factor: if chunk is long but has few keywords, it's diluted.
     # Normalizing by words per 100
@@ -90,20 +96,18 @@ def calculate_chunk_score(chunk: str) -> float:
 
     base_score = positive_score / density_factor
 
-    # Heavy penalty for noise
-    penalty = noise_count * 5.0
-
-    final_score = base_score - penalty
+    # Soften the noise trap: use a fractional dampener instead of flat subtraction
+    final_score = base_score * (0.9 ** noise_count)
 
     return final_score
 
-def evaluate_chunks(chunks: list[str]) -> list[dict]:
+def evaluate_chunks(chunks: list[str], herb_name: str) -> list[dict]:
     """
     Applies scoring to all chunks and returns structured evaluations.
     """
     evaluated = []
     for chunk in chunks:
-        score = calculate_chunk_score(chunk)
+        score = calculate_chunk_score(chunk, herb_name)
         evaluated.append({
             "text": chunk,
             "score": score

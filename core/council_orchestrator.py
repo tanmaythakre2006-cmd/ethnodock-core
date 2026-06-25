@@ -13,11 +13,12 @@ THRESHOLD_B = 0.5  # Junk/Noise, assassinate chunk
 def process_url(url_info: Dict[str, Any]) -> Dict[str, Any]:
     """
     Processes a single URL through the entire local reasoning pipeline.
-    Expects input like: {"url": str, "is_trusted": bool, ...}
+    Expects input like: {"url": str, "is_trusted": bool, "herb_name": str, ...}
     Returns structured output containing mathematically validated chunks.
     """
     url = url_info.get("url", "")
     is_trusted = url_info.get("is_trusted", False)
+    herb_name = url_info.get("herb_name", "")
 
     if not url:
         return {"url": url, "is_trusted": is_trusted, "validated_chunks": [], "error": "Empty URL"}
@@ -51,7 +52,7 @@ def process_url(url_info: Dict[str, Any]) -> Dict[str, Any]:
         return {"url": url, "is_trusted": is_trusted, "validated_chunks": [], "error": "No chunks generated"}
 
     # Step 4: Multi-Criteria Reasoning Engine (The Critic)
-    evaluated_chunks = evaluate_chunks(chunks)
+    evaluated_chunks = evaluate_chunks(chunks, herb_name)
 
     validated_chunks = []
 
