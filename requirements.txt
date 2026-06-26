@@ -1,6 +1,7 @@
-streamlit
 supabase
 beautifulsoup4
 requests
 python-dotenv
 duckduckgo-search
+fastapi
+uvicorn
