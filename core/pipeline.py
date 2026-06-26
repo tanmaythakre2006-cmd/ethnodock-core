@@ -1,110 +1,93 @@
 import logging
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Tuple
 
 from core.radar import execute_radar
 from core.council_orchestrator import orchestrate_council
-from core.cognitive_rag import extract_methodology
+from core.triangulator import LogicTriangulator
+from core.cognitive_rag import SandboxValidator
 from core.pruner import merge_matrices, prune_empty_nodes
+from database.supabase_client import get_supabase_client
 
 logger = logging.getLogger(__name__)
 
-def run_autonomous_extraction(herb_name: str, api_key: str, max_urls: int = 5) -> Dict[str, Any]:
+async def run_autonomous_extraction(herb_name: str, api_key: str = "", max_urls: int = 5) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     """
-    Orchestrates the entire extraction pipeline:
-    Radar -> Council Orchestrator (Critic) -> LLM Extraction -> Pruner.
-
-    Args:
-        herb_name (str): The name of the botanical subject to investigate.
-        api_key (str): The API key for the LLM extraction model (Gemini).
-        max_urls (int): The maximum number of URLs to scrape and analyze. Defaults to 5.
-
-    Returns:
-        Dict[str, Any]: The pristine, unified Master Matrix containing all extracted data.
+    Hybrid Sovereign Pipeline (Dual-Stream).
+    Returns (master_matrix, experimental_matrix)
     """
-    if not herb_name or not api_key:
-        logger.error("Missing herb_name or api_key. Aborting extraction.")
-        return {}
+    if not herb_name:
+        logger.error("Missing herb_name.")
+        return {}, {}
 
-    logger.info(f"Initiating autonomous extraction for herb: '{herb_name}' (max_urls: {max_urls})")
+    logger.info(f"Initiating Hybrid Pipeline for: '{herb_name}'")
 
-    # --- Step 1: Execute Radar ---
-    logger.info("Executing Radar to locate source materials...")
-    try:
-        urls = execute_radar(herb_name, max_results=max_urls)
-        logger.info(f"Radar successfully found {len(urls)} URLs.")
-    except Exception as e:
-        logger.error(f"Radar phase failed critically: {e}")
-        return {}
+    master_matrix = {}
 
+    # --- Pre-Flight Check ---
+    client = get_supabase_client()
+    if client:
+        try:
+            normalized_herb = herb_name.strip().lower()
+            existing_response = client.table('botanical_data').select("*").eq('herb_name', normalized_herb).execute()
+            if existing_response.data:
+                logger.info("Found existing Master Matrix.")
+                master_matrix = existing_response.data[0].get('master_matrix', {})
+            if master_matrix:
+                return master_matrix, {}
+        except Exception as e:
+            logger.warning(f"Supabase pre-flight failed: {e}")
+
+    # --- Step 1: Radar ---
+    urls = await execute_radar(herb_name, max_results=max_urls)
     if not urls:
-        logger.warning("Radar found no valid URLs. Pipeline terminating early.")
-        return {}
+        return master_matrix, {}
 
-    # --- Step 2: Orchestrate Council (Critic Validation) ---
-    logger.info("Orchestrating Council to validate text chunks...")
-    try:
-        council_results = orchestrate_council(urls)
-    except Exception as e:
-        logger.error(f"Council orchestration failed critically: {e}")
-        return {}
+    # --- Step 2: Orchestrate Council ---
+    council_results = await orchestrate_council(urls)
 
-    total_validated_chunks = sum(len(result.get("validated_chunks", [])) for result in council_results)
-    logger.info(f"Critic validated {total_validated_chunks} chunks across {len(council_results)} URLs.")
+    # --- Step 3: Data Router ---
+    stream_a_matrices = []
+    stream_b_chunks = []
 
-    if total_validated_chunks == 0:
-        logger.warning("Critic found no mathematically valid chunks. Pipeline terminating early.")
-        return {}
-
-    # --- Step 3: LLM Extraction ---
-    logger.info("Initiating LLM Extraction on validated chunks...")
-    matrices: List[Dict[str, Any]] = []
-    extraction_failures = 0
+    triangulator = LogicTriangulator(herb_name)
 
     for result in council_results:
-        url = result.get("url", "Unknown URL")
+        url = result.get("url", "Unknown")
         is_trusted = result.get("is_trusted", False)
         chunks = result.get("validated_chunks", [])
 
         for chunk_data in chunks:
-            chunk_text = chunk_data.get("text")
-            if not chunk_text:
-                continue
+            if is_trusted:
+                # Stream A: Sovereign Logic (API-Free)
+                matrix = triangulator.verify_and_build(chunk_data, is_trusted)
+                if matrix:
+                    stream_a_matrices.append(matrix)
+            else:
+                # Stream B: The Cognitive Sandbox
+                stream_b_chunks.append(chunk_data.get("text", ""))
 
-            logger.debug(f"Extracting methodology for chunk from source: {url}")
-            try:
-                matrix = extract_methodology(chunk_text, api_key, herb_name, is_trusted)
+    # Merge Stream A
+    if stream_a_matrices:
+        new_master = merge_matrices(stream_a_matrices)
+        master_matrix = merge_matrices([master_matrix, new_master]) if master_matrix else new_master
+        master_matrix = prune_empty_nodes(master_matrix)
 
-                if matrix and isinstance(matrix, dict) and "error" not in matrix:
-                    matrices.append(matrix)
-                else:
-                    error_msg = matrix.get('error', 'Unknown Error') if isinstance(matrix, dict) else 'Invalid JSON format'
-                    logger.warning(f"LLM extraction failure for chunk: {error_msg}")
-                    extraction_failures += 1
-            except Exception as e:
-                logger.error(f"Unhandled exception during LLM extraction: {e}")
-                extraction_failures += 1
+    experimental_matrix = {}
 
-    logger.info(f"LLM completed extraction. Successes: {len(matrices)}, Failures: {extraction_failures}")
+    # Process Stream B if API key is provided
+    if api_key and stream_b_chunks:
+        logger.info(f"Processing {len(stream_b_chunks)} chunks in Stream B Cognitive Sandbox.")
+        sandbox = SandboxValidator(api_key, master_matrix)
+        experimental_matrices = []
 
-    if not matrices:
-        logger.warning("LLM extraction produced no valid matrices. Pipeline terminating early.")
-        return {}
+        for chunk_text in stream_b_chunks:
+            if not chunk_text: continue
+            result = await sandbox.validate_and_extract(chunk_text, herb_name)
+            if result and "error" not in result:
+                experimental_matrices.append(result)
 
-    # --- Step 4: Matrix Consolidation and Pruning ---
-    logger.info("Initiating Matrix Merger...")
-    try:
-        master_matrix = merge_matrices(matrices)
-        logger.info(f"Successfully merged {len(matrices)} matrices into unified Master Matrix.")
-    except Exception as e:
-        logger.error(f"Matrix merging failed: {e}")
-        return {}
+        if experimental_matrices:
+            merged_exp = merge_matrices(experimental_matrices)
+            experimental_matrix = prune_empty_nodes(merged_exp)
 
-    logger.info("Initiating ruthless Pruner to eliminate empty structural nodes...")
-    try:
-        pruned_matrix = prune_empty_nodes(master_matrix)
-        logger.info("Pruning complete. Returning final Master Matrix.")
-    except Exception as e:
-        logger.error(f"Matrix pruning failed: {e}")
-        return {}
-
-    return pruned_matrix
+    return master_matrix, experimental_matrix
