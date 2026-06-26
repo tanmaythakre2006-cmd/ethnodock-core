@@ -1,112 +1,77 @@
 import json
-import requests
-import time
 import logging
+import asyncio
+import httpx
 from typing import Dict, Any
 
 logger = logging.getLogger(__name__)
 
-def extract_methodology(text_chunk: str, api_key: str, herb_name: str = "", is_trusted: bool = False) -> Dict[str, Any]:
+class SandboxValidator:
     """
-    Extracts methodology information from a text chunk using Gemini BYOK.
-
-    Args:
-        text_chunk (str): The text to extract from.
-        api_key (str): The API key for Gemini.
-        herb_name (str): The name of the botanical subject being investigated.
-        is_trusted (bool): Whether the source URL is from a trusted domain.
-
-    Returns:
-        Dict[str, Any]: The extracted data formatted exactly to the Deep Matrix JSON schema.
+    Validates unverified/conventional sources (Stream B) against the master matrix.
+    Uses LLM (Gemini) to evaluate consistency, coherence, and attribution.
     """
-    if not text_chunk or not api_key:
-        logger.error("extract_methodology called with missing text_chunk or api_key.")
-        return {"error": "Missing text or API key"}
+    def __init__(self, api_key: str, master_matrix: Dict[str, Any]):
+        self.api_key = api_key
+        self.master_matrix = master_matrix
+        self.url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={self.api_key}"
 
-    # Injecting prompt defense mechanisms based on mathematical trust routing
-    sandbox_directive = ""
-    if not is_trusted:
-        sandbox_directive = (
-            "CRITICAL SANDBOX DIRECTIVE: The following text is from an untrusted source. "
-            "Act as a skeptical botanist. Do not assume claims are scientifically valid. "
-            "Only extract claims that are explicitly stated in the text, and note their traditional or anecdotal nature where appropriate.\n\n"
+    async def validate_and_extract(self, text_chunk: str, herb_name: str) -> Dict[str, Any]:
+        if not self.api_key:
+            return {"error": "Missing API Key"}
+
+        prompt = (
+            f"You are the SandboxValidator for a botanical database.\n"
+            f"Target Herb: {herb_name}\n\n"
+            f"Here is the verified Master Matrix for this herb. This is established truth:\n"
+            f"{json.dumps(self.master_matrix)}\n\n"
+            f"Here is an unverified claim from a conventional/experimental source:\n"
+            f"{text_chunk}\n\n"
+            f"Evaluate this claim based on:\n"
+            f"1. Consistency: Does it contradict the Master Matrix? (If it directly opposes verified facts, it fails).\n"
+            f"2. Coherence: Is the claim internally logical?\n"
+            f"3. Attribution: Does it cite mechanisms or sources?\n\n"
+            f"If the claim passes validation, return a JSON object with the exact 'Deep Matrix' schema representing the new experimental insights, labeled under a mythology of 'Experimental/Conventional'. "
+            f"The JSON schema must be exactly: {{\"mythologies\": {{\"Experimental/Conventional\": {{\"<source_name>\": {{\"nomenclature\": [], \"species\": [], \"properties\": []}}}}}}}}\n"
+            f"If the claim fails validation, return: {{\"error\": \"Failed validation\"}}\n"
+            f"Output ONLY raw JSON. No markdown."
         )
 
-    prompt = (
-        f"{sandbox_directive}"
-        f"Read the following text about '{herb_name}' and extract data into the exact 'Deep Matrix' JSON schema provided below. "
-        "Output ONLY raw JSON. Do not include markdown formatting like ```json or ```. "
-        "JSON structure: {\"mythologies\": {\"<mythology_name>\": {\"<text_name>\": {\"nomenclature\": [], \"species\": [], \"properties\": []}}}}\n"
-        "If a specific mythology or text name is not mentioned, use 'Unknown_Mythology' or 'Unknown_Text'.\n\n"
-        f"Text: {text_chunk}"
-    )
-
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "temperature": 0.1,
-            "responseMimeType": "application/json"
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "temperature": 0.1,
+                "responseMimeType": "application/json"
+            }
         }
-    }
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
-    headers = {'Content-Type': 'application/json'}
+        headers = {'Content-Type': 'application/json'}
 
-    max_retries = 3
-    for attempt in range(max_retries):
-        try:
-            response = requests.post(url, headers=headers, json=payload, timeout=30)
+        max_retries = 3
+        async with httpx.AsyncClient() as client:
+            for attempt in range(max_retries):
+                try:
+                    response = await client.post(self.url, headers=headers, json=payload, timeout=30.0)
+                    if response.status_code != 200:
+                        logger.warning(f"Gemini API returned {response.status_code} on attempt {attempt+1}")
+                        await asyncio.sleep(2 ** attempt)
+                        continue
 
-            if response.status_code != 200:
-                logger.warning(f"Gemini API returned status {response.status_code} on attempt {attempt + 1}")
-                if attempt < max_retries - 1:
-                    time.sleep(2 ** attempt)  # Exponential backoff
-                    continue
-                return {"error": f"API Error {response.status_code}: {response.text}"}
+                    data = response.json()
+                    raw_text = data['candidates'][0]['content']['parts'][0]['text'].strip()
 
-            data = response.json()
+                    if raw_text.startswith("```json"): raw_text = raw_text[7:]
+                    if raw_text.startswith("```"): raw_text = raw_text[3:]
+                    if raw_text.endswith("```"): raw_text = raw_text[:-3]
 
-            try:
-                raw_text = data['candidates'][0]['content']['parts'][0]['text']
-            except (KeyError, IndexError) as e:
-                logger.warning(f"Unexpected response structure from Gemini API: {e} on attempt {attempt + 1}")
-                if attempt < max_retries - 1:
-                    time.sleep(2 ** attempt)
-                    continue
-                return {"error": "API returned unexpected structure", "raw_output": str(data)}
+                    try:
+                        parsed = json.loads(raw_text.strip())
+                        return parsed
+                    except json.JSONDecodeError as e:
+                        return {"error": "LLM failed to output valid JSON", "raw_output": raw_text}
 
-            text = raw_text.strip()
+                except Exception as e:
+                    logger.warning(f"Error during validation: {e}")
+                    await asyncio.sleep(2 ** attempt)
 
-            # Robust handling for LLM artifacts
-            if text.startswith("```json"):
-                text = text[7:]
-            if text.startswith("```"):
-                text = text[3:]
-            if text.endswith("```"):
-                text = text[:-3]
-            text = text.strip()
-
-            try:
-                parsed_json = json.loads(text)
-                return parsed_json
-            except json.JSONDecodeError as e:
-                logger.warning(f"Failed to decode JSON from Gemini output: {e} on attempt {attempt + 1}")
-                if attempt < max_retries - 1:
-                    time.sleep(2 ** attempt)
-                    continue
-                return {"error": "LLM failed to output valid JSON", "raw_output": text}
-
-        except requests.exceptions.RequestException as e:
-            logger.warning(f"Network error during Gemini request: {e} on attempt {attempt + 1}")
-            if attempt < max_retries - 1:
-                time.sleep(2 ** attempt)
-                continue
-            return {"error": f"Network exception: {str(e)}"}
-        except Exception as e:
-            logger.warning(f"Unexpected error during methodology extraction: {e} on attempt {attempt + 1}")
-            if attempt < max_retries - 1:
-                time.sleep(2 ** attempt)
-                continue
-            return {"error": f"Unexpected exception: {str(e)}"}
-
-    return {"error": "LLM Extraction failed after 3 attempts."}
+        return {"error": "LLM extraction failed after retries."}

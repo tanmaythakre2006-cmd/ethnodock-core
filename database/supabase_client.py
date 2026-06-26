@@ -75,3 +75,47 @@ def save_master_matrix(herb_name: str, new_matrix: dict, new_urls: list) -> dict
 
     except Exception as e:
         return {"error": str(e)}
+
+def save_experimental_matrix(herb_name: str, new_matrix: dict, new_urls: list) -> dict:
+    """
+    Saves experimental/conventional insights to a separate table in Supabase.
+    """
+    if not new_matrix:
+        return {"error": "Cannot save empty matrix"}
+
+    client = get_supabase_client()
+    if client is None:
+        return {"error": "Credentials missing"}
+
+    try:
+        normalized_herb_name = herb_name.strip().lower()
+
+        # We assume table 'experimental_data' exists, if not we catch exception
+        existing = client.table('experimental_data').select("*").eq('herb_name', normalized_herb_name).execute()
+
+        if not existing.data:
+            payload = {
+                "herb_name": normalized_herb_name,
+                "experimental_matrix": new_matrix,
+                "source_urls": new_urls
+            }
+            res = client.table('experimental_data').insert(payload).execute()
+            return {"success": True, "action": "inserted", "data": res.data}
+        else:
+            row = existing.data[0]
+            existing_matrix = row.get('experimental_matrix', {})
+            existing_urls = row.get('source_urls', [])
+
+            combined_urls = list(set(existing_urls + new_urls))
+            merged_matrix = merge_matrices([existing_matrix, new_matrix])
+            final_matrix = prune_empty_nodes(merged_matrix)
+
+            payload = {
+                "experimental_matrix": final_matrix,
+                "source_urls": combined_urls
+            }
+            res = client.table('experimental_data').update(payload).eq('id', row['id']).execute()
+            return {"success": True, "action": "updated", "data": res.data}
+
+    except Exception as e:
+        return {"error": str(e)}
