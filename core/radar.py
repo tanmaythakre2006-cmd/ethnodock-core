@@ -65,9 +65,8 @@ def determine_trust(url: str) -> bool:
 # Since DuckDuckGo rate-limits aggressively and AsyncDDGS is removed in v6+,
 # we run the synchronous DDGS client in a background thread to maintain an async facade,
 # while using a lock to serialize requests and add organic jitter.
-search_lock = asyncio.Lock()
 
-async def search_with_resilience(query: str, max_results: int) -> List[Dict[str, str]]:
+async def search_with_resilience(query: str, max_results: int, lock: asyncio.Lock) -> List[Dict[str, str]]:
     results = []
     max_retries = 3
 
@@ -75,7 +74,7 @@ async def search_with_resilience(query: str, max_results: int) -> List[Dict[str,
         with DDGS() as ddgs:
             return ddgs.text(query, max_results=max_results)
 
-    async with search_lock:
+    async with lock:
         for attempt in range(max_retries):
             try:
                 # Run the blocking call in a thread pool so we don't freeze the async event loop
@@ -97,12 +96,13 @@ async def search_with_resilience(query: str, max_results: int) -> List[Dict[str,
 async def execute_radar(herb_name: str, max_results: int = 10) -> List[Dict[str, Any]]:
     all_results = []
     seen_urls = set()
+    search_lock = asyncio.Lock()
 
     tier1_queries = synthesize_tier1_queries(herb_name)
     tier2_queries = synthesize_tier2_queries(herb_name)
 
     async def run_tier(queries):
-        tasks = [search_with_resilience(query, max_results=3) for query in queries]
+        tasks = [search_with_resilience(query, max_results=3, lock=search_lock) for query in queries]
         gathered = await asyncio.gather(*tasks)
 
         tier_results = []
