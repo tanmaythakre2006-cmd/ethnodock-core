@@ -5,7 +5,7 @@ import random
 from typing import List, Dict, Any
 from urllib.parse import urlparse, urlunparse
 
-from duckduckgo_search import DDGS
+from ddgs import DDGS
 
 logger = logging.getLogger(__name__)
 
@@ -37,7 +37,15 @@ def synthesize_tier2_queries(herb_name: str) -> List[str]:
     return [
         f"{herb_name} pharmacological properties medical uses",
         f"{herb_name} traditional medicine history ethnobotany",
-        f"{herb_name} active compounds phytochemicals"
+        f"{herb_name} active compounds phytochemicals",
+        f"{herb_name} traditional uses ethnomedicine"
+    ]
+
+def synthesize_tier3_queries(herb_name: str) -> List[str]:
+    return [
+        f"{herb_name} botanical taxonomy filetype:pdf",
+        f"{herb_name} chemical constituents filetype:pdf",
+        f"{herb_name} mechanism of action filetype:pdf"
     ]
 
 def normalize_url(url: str) -> str:
@@ -100,6 +108,7 @@ async def execute_radar(herb_name: str, max_results: int = 10) -> List[Dict[str,
 
     tier1_queries = synthesize_tier1_queries(herb_name)
     tier2_queries = synthesize_tier2_queries(herb_name)
+    tier3_queries = synthesize_tier3_queries(herb_name)
 
     async def run_tier(queries):
         tasks = [search_with_resilience(query, max_results=3, lock=search_lock) for query in queries]
@@ -129,6 +138,14 @@ async def execute_radar(herb_name: str, max_results: int = 10) -> List[Dict[str,
     logger.info(f"Tier 1 yielded only {len(all_results)} urls. Cascading to Tier 2 (General Web)...")
     tier2_results = await run_tier(tier2_queries)
     all_results.extend(tier2_results)
+
+    if len(all_results) >= max_results:
+        logger.info("Tier 2 yielded sufficient results.")
+        return sorted(all_results, key=lambda x: (not x["is_trusted"], len(x["url"])))[:max_results]
+
+    logger.info(f"Tier 2 yielded only {len(all_results)} urls. Cascading to Tier 3 (Scientific PDFs)...")
+    tier3_results = await run_tier(tier3_queries)
+    all_results.extend(tier3_results)
 
     sorted_results = sorted(all_results, key=lambda x: (not x["is_trusted"], len(x["url"])))
     return sorted_results[:max_results]

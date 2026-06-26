@@ -11,7 +11,10 @@ logger = logging.getLogger(__name__)
 THRESHOLD_A = 3.0  # High confidence, keep chunk
 THRESHOLD_B = 0.5  # Junk/Noise, assassinate chunk
 
-async def process_url(client: httpx.AsyncClient, url_info: Dict[str, Any]) -> Dict[str, Any]:
+from core.critic import PHARMA_TERMS, HISTORY_TERMS
+import re
+
+async def process_url(client: httpx.AsyncClient, url_info: Dict[str, Any], herb_name: str = "") -> Dict[str, Any]:
     """
     Processes a single URL asynchronously through the entire local reasoning pipeline.
     """
@@ -44,7 +47,28 @@ async def process_url(client: httpx.AsyncClient, url_info: Dict[str, Any]) -> Di
     if not chunks:
         return {"url": url, "is_trusted": is_trusted, "validated_chunks": [], "error": "No chunks generated"}
 
-    evaluated_chunks = evaluate_chunks(chunks)
+    # Multi-pass data isolation loop
+    isolated_chunks = []
+    for chunk in chunks:
+        chunk_lower = chunk.lower()
+
+        # Pass 1: Context (is the target mentioned?)
+        pass_1_cleared = herb_name.lower() in chunk_lower if herb_name else True
+
+        if pass_1_cleared:
+            # Pass 2: Phytochemistry (bioactive compounds, alkaloids, etc)
+            pass_2_cleared = any(re.search(rf'\b{re.escape(term)}\b', chunk_lower) for term in PHARMA_TERMS)
+
+            # Pass 3: Ethnomedicine & History
+            pass_3_cleared = any(re.search(rf'\b{re.escape(term)}\b', chunk_lower) for term in HISTORY_TERMS)
+
+            if pass_2_cleared or pass_3_cleared:
+                isolated_chunks.append(chunk)
+
+    if not isolated_chunks:
+        isolated_chunks = chunks
+
+    evaluated_chunks = evaluate_chunks(isolated_chunks, herb_name)
 
     validated_chunks = []
 
@@ -67,7 +91,7 @@ async def process_url(client: httpx.AsyncClient, url_info: Dict[str, Any]) -> Di
         "validated_chunks": validated_chunks
     }
 
-async def orchestrate_council(url_list: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+async def orchestrate_council(url_list: List[Dict[str, Any]], herb_name: str = "") -> List[Dict[str, Any]]:
     """
     Orchestrates the entire council process for a list of URLs asynchronously using httpx and asyncio.
     """
@@ -79,7 +103,7 @@ async def orchestrate_council(url_list: List[Dict[str, Any]]) -> List[Dict[str, 
     async def bound_process_url(client, url_info):
         async with sem:
             try:
-                return await process_url(client, url_info)
+                return await process_url(client, url_info, herb_name)
             except Exception as e:
                 logger.error(f"Council crash on {url_info.get('url')}: {e}")
                 return {
