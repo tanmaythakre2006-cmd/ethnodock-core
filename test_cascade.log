@@ -1,0 +1,845 @@
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Ashwagandha'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.ashwagandha "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ashwagandha+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ashwagandha%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=B9RDTAwqV6nMleZC4He0RTHv;_ylu=-s4X58V7piBB3lfD4iHBM79ddo80Yk9SLJ7DOTBqj6CavKo?p=Ashwagandha+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ashwagandha+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ashwagandha%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://yandex.com/search/site/?text=Ashwagandha+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=7566902 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ashwagandha+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ashwagandha%20site%3Awikipedia.org 200
+INFO:primp:response: https://yandex.com/search/site/?text=Ashwagandha+site%3Awikipedia.org&web=1&searchid=1014754 200
+INFO:primp:response: https://www.google.com/search?q=Ashwagandha+site%3Awikipedia.org&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ashwagandha+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ashwagandha%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.google.com/search?q=Ashwagandha+uses+side+effects+site%3A.edu&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ashwagandha+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ashwagandha%20dietary%20supplement%20site%3A.gov 200
+INFO:ddgs.ddgs:Error in engine yandex: TimeoutException(TimeoutError('error sending request for url (https://yandex.com/search/site/?text=Ashwagandha+dietary+supplement+site%3A.gov&web=1&searchid=9860212) > operation timed out'))
+INFO:primp:response: https://www.google.com/search?q=Ashwagandha+dietary+supplement+site%3A.gov&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:ddgs.ddgs:Error in engine brave: TimeoutException(TimeoutError('error sending request for url (https://search.brave.com/search?q=Ashwagandha+dietary+supplement+site%3A.gov&source=web) > operation timed out'))
+INFO:core.radar:Tier 1 yielded sufficient results.
+ERROR:core.proxy_client:Exception fetching https://en.wikipedia.org/: [Errno -3] Temporary failure in name resolution
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F11529685%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.ashwagandha "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Papaya'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.papaya "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Papaya+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Papaya%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.mojeek.com/search?q=Papaya+clinical+trials+site%3Ancbi.nlm.nih.gov 403
+INFO:primp:response: https://search.brave.com/search?q=Papaya+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Papaya+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Papaya%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://www.google.com/search?q=Papaya+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Papaya+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Papaya%20site%3Awikipedia.org 200
+INFO:primp:response: https://www.mojeek.com/search?q=Papaya+site%3Awikipedia.org 403
+INFO:primp:response: https://search.brave.com/search?q=Papaya+site%3Awikipedia.org&source=web 429
+INFO:primp:response: https://www.google.com/search?q=Papaya+site%3Awikipedia.org&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Papaya+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Papaya%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://yandex.com/search/site/?text=Papaya+uses+side+effects+site%3A.edu&web=1&searchid=5120931 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Papaya%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Papaya+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://www.google.com/search?q=Papaya+dietary+supplement+site%3A.gov&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPapaya "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fsco.wikipedia.org%2Fwiki%2FPapaya "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F31007971%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.papaya "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Turmeric'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.turmeric "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Turmeric+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Turmeric%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://search.brave.com/search?q=Turmeric+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=G9rboJsW0HkHg_CA1FXTFvRq;_ylu=K_Hxo3ifC-SHpprTI0PqQWpRBq8GoU_sFXqyO9GKO7ju3wM?p=Turmeric+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Turmeric%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Turmeric+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.mojeek.com/search?q=Turmeric+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 403
+INFO:primp:response: https://search.yahoo.com/search;_ylt=M3_zv0oUFU13sDk0CT0c7xY6;_ylu=Fam3mKr5Ip9s2O-Ql2gUCXlfNvpt4OMcanNvPF4eM89fduc?p=Turmeric+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Turmeric+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Turmeric%20site%3Awikipedia.org 200
+INFO:primp:response: https://www.google.com/search?q=Turmeric+site%3Awikipedia.org&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Turmeric+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Turmeric%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://search.brave.com/search?q=Turmeric+uses+side+effects+site%3A.edu&source=web 429
+INFO:primp:response: https://www.google.com/search?q=Turmeric+uses+side+effects+site%3A.edu&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Turmeric+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Turmeric%20dietary%20supplement%20site%3A.gov 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.brave.com/search?q=Turmeric+dietary+supplement+site%3A.gov&source=web 429
+INFO:primp:response: https://www.google.com/search?q=Turmeric+dietary+supplement+site%3A.gov&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTurmeric "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F23143785%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.turmeric "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Neem'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.neem "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Neem%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Neem+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=Of2kl4mcRFT3pBAOdBf1k_EY;_ylu=SS4exDZLfExI_RrHw4NvkZE4fq7AAxKWzmdJSZ_m3cnVhQ0?p=Neem+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.brave.com/search?q=Neem+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://www.google.com/search?q=Neem+clinical+trials+site%3Ancbi.nlm.nih.gov&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Neem%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Neem+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://yandex.com/search/site/?text=Neem+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=4681978 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Neem%20site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Neem+site%3Awikipedia.org&limit=1 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.yahoo.com/search;_ylt=eClUqvJQ9IeZmybV7BX7UUKB;_ylu=GMsCqS-D0LVzELyTI3fIhaQ4UOualySgdKYB2zvHUsdzVaQ?p=Neem+site%3Awikipedia.org 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Neem%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Neem+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://search.brave.com/search?q=Neem+uses+side+effects+site%3A.edu&source=web 429
+INFO:primp:response: https://www.google.com/search?q=Neem+uses+side+effects+site%3A.edu&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Neem%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Neem+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://www.google.com/search?q=Neem+dietary+supplement+site%3A.gov&filter=1&start=0&hl=en-US&lr=lang_en&cr=countryUS 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FNeem_oil "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F1983033%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.neem "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Holy Basil'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.holy+basil "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Holy+Basil+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Holy%20Basil%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://yandex.com/search/site/?text=Holy+Basil+clinical+trials+site%3Ancbi.nlm.nih.gov&web=1&searchid=1542720 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Holy%20Basil%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Holy+Basil+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.yahoo.com/search;_ylt=2yzdN2FkGZkT-zKj-E8VNeI6;_ylu=64shLJ9E6vK3NNUbK-6rHv_mq3zPjls8jTP19QiP8gaZj3A?p=Holy+Basil+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Holy%20Basil%20site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Holy+Basil+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=SpecZzd5GkzOkWr6LQnWTr7H;_ylu=bbyQ7WD4DZJOCZN5vKQgEGM02TT3uvG4yL0efF3troQj4VY?p=Holy+Basil+site%3Awikipedia.org 200
+INFO:primp:response: https://www.mojeek.com/search?q=Holy+Basil+site%3Awikipedia.org 403
+INFO:primp:response: https://search.brave.com/search?q=Holy+Basil+site%3Awikipedia.org&source=web 429
+INFO:primp:response: https://yandex.com/search/site/?text=Holy+Basil+site%3Awikipedia.org&web=1&searchid=9358125 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DHoly%2BBasil%2Bsite%253Awikipedia.org%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGM-b-tEGIjCGMtY_7INcK7Gj10SgQTK5U4DaExrHuCZo9qcQX32jQyHgVzbEOHZryPDqvEZj2JsyAnJSWgFD 429
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Holy+Basil+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Holy%20Basil%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.brave.com/search?q=Holy+Basil+uses+side+effects+site%3A.edu&source=web 429
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DHoly%2BBasil%2Buses%2Bside%2Beffects%2Bsite%253A.edu%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGNOb-tEGIjCfVj1_SjBTasaqDttzps99-uK5dQtIZiVI5FUQj4HTSffj3hDBAhMa1lJkFW8WrwoyAnJSWgFD 429
+INFO:primp:response: https://yandex.com/search/site/?text=Holy+Basil+uses+side+effects+site%3A.edu&web=1&searchid=8744557 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Holy+Basil+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Holy%20Basil%20dietary%20supplement%20site%3A.gov 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://yandex.com/search/site/?text=Holy+Basil+dietary+supplement+site%3A.gov&web=1&searchid=6909183 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2Fclinical%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F39911421%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.holy+basil "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Ginger'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.ginger "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginger+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginger%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=5DkhdqyMM_9doS6lFm3VC7U1;_ylu=kHukSTuD6kGiwUjuulWeyX3ToMcO-s2aO4e6QFyqRI9Rqks?p=Ginger+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginger+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginger%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGinger%2Bpharmacology%2Bsite%253Apubmed.ncbi.nlm.nih.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGOGb-tEGIjAM_qjlW2dJ6ECIfVyfUYECXhir8jBZdy5CDE0Pp6kXNTJPx9RbcxE4CAwEfN0Gg1QyAnJSWgFD 429
+INFO:primp:response: https://search.brave.com/search?q=Ginger+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://www.mojeek.com/search?q=Ginger+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 403
+INFO:primp:response: https://yandex.com/search/site/?text=Ginger+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=9897057 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginger+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginger%20site%3Awikipedia.org 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGinger%2Bsite%253Awikipedia.org%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGOab-tEGIjBAu_QTgJnXtTs9Ipz82uU0Pt7y8t5T5m229vvDbKKCh4g8MMLCuurXF9Nz7Elp140yAnJSWgFD 429
+INFO:primp:response: https://yandex.com/search/site/?text=Ginger+site%3Awikipedia.org&web=1&searchid=9065945 200
+INFO:primp:response: https://www.mojeek.com/search?q=Ginger+site%3Awikipedia.org 403
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=VDEJ_Trg1fE5FGuCRXkbrfqb;_ylu=_3i-HLLSXOQP2tQyIgQfspeBc2yPae8F-Az94h00hNYs6CI?p=Ginger+site%3Awikipedia.org 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginger%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginger+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGinger%2Buses%2Bside%2Beffects%2Bsite%253A.edu%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGOub-tEGIjBVk1mnV8sdyiXbLjJLoaRm9wG6v_Brm0iKKbXb5VffHUH21bv8NFJ5AqaWl-k5ZzkyAnJSWgFD 429
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://yandex.com/search/site/?text=Ginger+uses+side+effects+site%3A.edu&web=1&searchid=6982787 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginger+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginger%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://www.mojeek.com/search?q=Ginger+dietary+supplement+site%3A.gov 403
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://yandex.com/search/site/?text=Ginger+dietary+supplement+site%3A.gov&web=1&searchid=8146078 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGinger "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F2062873%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fwww.nccih.nih.gov%2Fhealth%2Fginger "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.ginger "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Garlic'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.garlic "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Garlic%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Garlic+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGarlic%2Bclinical%2Btrials%2Bsite%253Ancbi.nlm.nih.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGPab-tEGIjA228MzAEwzBk3pWiXgrxKs8p6iFFz_xnmB3uMwOewz05TnVpDnzjv6fSFvX_AUoHcyAnJSWgFD 429
+INFO:ddgs.ddgs:Error in engine yandex: TimeoutException(TimeoutError('error sending request for url (https://yandex.com/search/site/?text=Garlic+clinical+trials+site%3Ancbi.nlm.nih.gov&web=1&searchid=8642796) > operation timed out'))
+INFO:ddgs.ddgs:Error in engine mojeek: TimeoutException(TimeoutError('error sending request for url (https://www.mojeek.com/search?q=Garlic+clinical+trials+site%3Ancbi.nlm.nih.gov) > operation timed out'))
+INFO:ddgs.ddgs:Error in engine brave: TimeoutException(TimeoutError('error sending request for url (https://search.brave.com/search?q=Garlic+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web) > operation timed out'))
+WARNING:core.radar:Search attempt 1 failed for query 'Garlic clinical trials site:ncbi.nlm.nih.gov': error sending request for url (https://search.brave.com/search?q=Garlic+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web) > operation timed out
+INFO:ddgs.ddgs:Error in engine grokipedia: TimeoutException(TimeoutError('error sending request for url (https://grokipedia.com/api/typeahead?query=Garlic+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1) > operation timed out'))
+INFO:ddgs.ddgs:Error in engine wikipedia: TimeoutException(TimeoutError('error sending request for url (https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Garlic%20clinical%20trials%20site%3Ancbi.nlm.nih.gov) > operation timed out'))
+INFO:ddgs.ddgs:Error in engine startpage: TimeoutException(TimeoutError('error sending request for url (https://www.startpage.com/) > operation timed out'))
+INFO:ddgs.ddgs:Error in engine yandex: TimeoutException(TimeoutError('error sending request for url (https://yandex.com/search/site/?text=Garlic+clinical+trials+site%3Ancbi.nlm.nih.gov&web=1&searchid=3270444) > operation timed out'))
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGarlic%2Bclinical%2Btrials%2Bsite%253Ancbi.nlm.nih.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGJOc-tEGIjBOimWRG6vYMV9fyHtnjfVtA-NDsbGmy6AJtjFCBjDJex3j-7xKQX532T7s6EFcE_YyAnJSWgFD 429
+INFO:ddgs.ddgs:Error in engine duckduckgo: TimeoutException("Request timed out: ConnectTimeout('timed out')")
+INFO:primp:response: https://search.yahoo.com/search;_ylt=goynJVt4d4-c95KodFQQV0Gl;_ylu=6S5x0mrLEn0xcwobJE_EdANB1PtKfgyKGe9ekrdjYf9rJa4?p=Garlic+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+WARNING:core.radar:Search attempt 2 failed for query 'Garlic clinical trials site:ncbi.nlm.nih.gov': Request timed out: ConnectTimeout('timed out')
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Garlic+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Garlic%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://yandex.com/search/site/?text=Garlic+clinical+trials+site%3Ancbi.nlm.nih.gov&web=1&searchid=5736097 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Garlic+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Garlic%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.mojeek.com/search?q=Garlic+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 403
+INFO:primp:response: https://search.brave.com/search?q=Garlic+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://yandex.com/search/site/?text=Garlic+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=5640879 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Garlic+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Garlic%20site%3Awikipedia.org 200
+INFO:primp:response: https://search.brave.com/search?q=Garlic+site%3Awikipedia.org&source=web 429
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGarlic%2Bsite%253Awikipedia.org%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGLCc-tEGIjAh43In-Ly6iz5OZGqwaI-EWkP_QZMUYVnMgAYV87x0JUx0BJKnIKjF4u_8-DseASsyAnJSWgFD 429
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://yandex.com/search/site/?text=Garlic+site%3Awikipedia.org&web=1&searchid=9201290 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Garlic+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Garlic%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://search.brave.com/search?q=Garlic+uses+side+effects+site%3A.edu&source=web 429
+INFO:primp:response: https://www.mojeek.com/search?q=Garlic+uses+side+effects+site%3A.edu 403
+INFO:primp:response: https://search.yahoo.com/search;_ylt=__oTIC-RsIn4mGOHNU1-QLhj;_ylu=7MQ57tPDgusM5IOBJQl_QtBOvELYui1NPTXHGSrFg4-rqEE?p=Garlic+uses+side+effects+site%3A.edu 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Garlic+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Garlic%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://search.brave.com/search?q=Garlic+dietary+supplement+site%3A.gov&source=web 429
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGarlic%2Bdietary%2Bsupplement%2Bsite%253A.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGLqc-tEGIjDvVwbotcU6n5nWsTtYHJ915WWjAMNhl227MH_7o0BNAJlLcTWeaEmWkd2DTALz7RQyAnJSWgFD 429
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.yahoo.com/search;_ylt=DUDZkbpUGdjARpCvcXoaTgkU;_ylu=S7VB9Fme6p3MrIawv7IIQtmC_4-6PrVy1NQgLDCADykZipI?p=Garlic+dietary+supplement+site%3A.gov 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAil "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAioli "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fwww.nccih.nih.gov%2Fhealth%2Fgarlic "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.garlic "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Aloe Vera'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.aloe+vera "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Aloe%20Vera%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Aloe+Vera+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=ZkSH3SPoZlWd6qi2bgFeBRpG;_ylu=N-InTo_kFb3YgcvlmDIRLW7bAfSCY9FJJ_rp8XmyHYvjj3Q?p=Aloe+Vera+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.brave.com/search?q=Aloe+Vera+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://www.mojeek.com/search?q=Aloe+Vera+clinical+trials+site%3Ancbi.nlm.nih.gov 403
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DAloe%2BVera%2Bclinical%2Btrials%2Bsite%253Ancbi.nlm.nih.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGMGc-tEGIjC1r7WNijBwWvJSEJTdMgQqUyByum50RXSgWSWyuzKXAhNnqCtn3ROCW0Nbwv_5eGQyAnJSWgFD 429
+INFO:primp:response: https://yandex.com/search/site/?text=Aloe+Vera+clinical+trials+site%3Ancbi.nlm.nih.gov&web=1&searchid=1225821 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Aloe%20Vera%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Aloe+Vera+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://yandex.com/search/site/?text=Aloe+Vera+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=2861681 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Aloe%20Vera%20site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Aloe+Vera+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.mojeek.com/search?q=Aloe+Vera+site%3Awikipedia.org 403
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DAloe%2BVera%2Bsite%253Awikipedia.org%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGMqc-tEGIjAWCA8ky3eni03eM3AGaMu8oOmjGT-1NgiDsP4_CPFIb8rWJ703h5eudkadggkczOUyAnJSWgFD 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=xl_Gv4LzcuAckB-mjF29ODeC;_ylu=X2wykPJllPs5vsMRkpL8fuwJrHsCBqt9nGrxPqFnOD1sLj0?p=Aloe+Vera+site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Aloe+Vera+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Aloe%20Vera%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://yandex.com/search/site/?text=Aloe+Vera+uses+side+effects+site%3A.edu&web=1&searchid=7883318 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Aloe+Vera+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Aloe%20Vera%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://www.mojeek.com/search?q=Aloe+Vera+dietary+supplement+site%3A.gov 403
+INFO:primp:response: https://search.brave.com/search?q=Aloe+Vera+dietary+supplement+site%3A.gov&source=web 429
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://yandex.com/search/site/?text=Aloe+Vera+dietary+supplement+site%3A.gov&web=1&searchid=8561232 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAloe_vera "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAloe "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FAloe_vera "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.aloe+vera "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Echinacea'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.echinacea "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Echinacea%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Echinacea+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://www.mojeek.com/search?q=Echinacea+clinical+trials+site%3Ancbi.nlm.nih.gov 403
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.yahoo.com/search;_ylt=QvlB5vmby-jR90qFoarSLL3z;_ylu=6dBue3SGoADMR4zXXvUbwhWN54FiB0fqyZYJ5GYiAzRelvY?p=Echinacea+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://yandex.com/search/site/?text=Echinacea+clinical+trials+site%3Ancbi.nlm.nih.gov&web=1&searchid=4351404 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Echinacea%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Echinacea+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=fZMEC-eMiahhbliIro9z5cRa;_ylu=DqW9wKzIG36DzeVMnVpY4C3HJndg7ysKd34f6_5So255f4Q?p=Echinacea+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DEchinacea%2Bpharmacology%2Bsite%253Apubmed.ncbi.nlm.nih.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGOGc-tEGIjCrZgj8pIeLPGSTkviT-PVjBadYi7UN6AlnDry6yU6rVqF_tzRoktB_05EYdts4jQoyAnJSWgFD 429
+INFO:primp:response: https://search.brave.com/search?q=Echinacea+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://www.mojeek.com/search?q=Echinacea+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 403
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://yandex.com/search/site/?text=Echinacea+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=4635082 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Echinacea%20site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Echinacea+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DEchinacea%2Bsite%253Awikipedia.org%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGOWc-tEGIjBBey-X9SqsFHaUTxdG3FvHRcwW-5gPbHC1W9NiE2wnpZYpTeqIsv33vNo1q5a3QtEyAnJSWgFD 429
+INFO:primp:response: https://search.brave.com/search?q=Echinacea+site%3Awikipedia.org&source=web 429
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://yandex.com/search/site/?text=Echinacea+site%3Awikipedia.org&web=1&searchid=2442479 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Echinacea%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Echinacea+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DEchinacea%2Buses%2Bside%2Beffects%2Bsite%253A.edu%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGOyc-tEGIjCQMCStJl2ia9WyaRJqqTQYDCN42Ic4fO0BU4EO416IbnCIYLr-5g97pfrIIt_E1XsyAnJSWgFD 429
+INFO:primp:response: https://search.brave.com/search?q=Echinacea+uses+side+effects+site%3A.edu&source=web 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=Acc4oGdyrZ1Jgudf1GVz7dOu;_ylu=bP6I9bKJin48CMIUP_O4gy0elhaJVf2J1SFTxYZe9oKr3Po?p=Echinacea+uses+side+effects+site%3A.edu 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Echinacea+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Echinacea%20dietary%20supplement%20site%3A.gov 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.mojeek.com/search?q=Echinacea+dietary+supplement+site%3A.gov 403
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DEchinacea%2Bdietary%2Bsupplement%2Bsite%253A.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGPGc-tEGIjBI6HMhCJ4Rzb9PebdaWQoZPfGD8gfUnpAhS-kueTxTqZtmpz6MAQ-h82diwxvB7WoyAnJSWgFD 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=uaNuF9g3YQYkcFtMudONPo8_;_ylu=-D1JUOWC2nXJaXAWQyIrv7KrxCSNKszohoSPFRe3xY5dYPA?p=Echinacea+dietary+supplement+site%3A.gov 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FNoni_juice "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F29749084%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.echinacea "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+\n--- Testing Ashwagandha ---
+SUCCESS: Extracted data for Ashwagandha
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Ashwagandha', 'Ashwagandha', 'Ashwagandha', 'Ashwagandha', 'Ashwagandha', 'Ashwagandha', 'Ashwagandha', 'Ashwagandha', 'Ashwagandha', 'Ashwagandha', 'Ashwagandha', 'Ashwagandha'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Treatment', 'Trial', 'Anti-inflammatory', 'Therapeutic', 'Mechanism', 'Clinical', 'Pharmacology', 'Therapeutic', 'Clinical', 'Treatment', 'Mechanism', 'Therapeutic', 'Pharmacology', 'Pharmacological', 'Therapeutic', 'Pharmacology', 'Therapeutic', 'Pharmacology', 'Pharmacological', 'Therapeutic', 'Pharmacology', 'Therapeutic', 'Medicine']}}}}
+\n--- Testing Papaya ---
+SUCCESS: Extracted data for Papaya
+Data: {'mythologies': {'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya'], 'species': [], 'properties': ['Medicine', 'Medicine', 'Treatment', 'Medicine', 'Toxicity', 'Medicine', 'Medicine', 'Medicine', 'Treatment', 'Medicine', 'Treatment', 'Metabolism', 'Medicine', 'Metabolism', 'Medicine']}}, 'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya', 'Papaya'], 'species': [], 'properties': ['Toxicity', 'Medicine', 'Medicine', 'Medicine', 'Mechanism', 'Treatment', 'Treatment', 'Medicine', 'Antioxidant', 'Clinical', 'Treatment', 'Dosage', 'Antioxidant', 'Inhibitor', 'Treatment', 'Antioxidant', 'Inhibitor', 'Treatment', 'Antioxidant', 'Metabolism']}}}}
+\n--- Testing Turmeric ---
+SUCCESS: Extracted data for Turmeric
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Toxicity', 'Clinical', 'Compound', 'Clinical', 'Medicine', 'Phytochemical', 'Medicine', 'Clinical', 'Phytochemical', 'Clinical', 'Efficacy', 'Clinical', 'Treatment', 'Pharmacological', 'Efficacy', 'Clinical', 'Medicine', 'Therapeutic', 'Medicine', 'Treatment', 'Pharmacological', 'Efficacy', 'Antioxidant', 'Clinical', 'Medicine', 'Receptor', 'Antioxidant', 'Clinical', 'Treatment', 'Trial', 'Clinical', 'Efficacy']}}, 'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric', 'Turmeric'], 'species': [], 'properties': ['Efficacy', 'Medicine', 'Compound', 'Medicine', 'Efficacy', 'Medicine']}}, 'TCM': {'Extracted_Source': {'nomenclature': ['Turmeric'], 'species': [], 'properties': ['Medicine']}}}}
+\n--- Testing Neem ---
+SUCCESS: Extracted data for Neem
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Neem', 'Neem', 'Neem', 'Neem', 'Neem', 'Neem', 'Neem'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Toxicity', 'Treatment', 'Treatment', 'Pharmacology', 'Dosage']}}, 'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Neem', 'Neem'], 'species': [], 'properties': ['Medicine']}}}}
+\n--- Testing Holy Basil ---
+SUCCESS: Extracted data for Holy Basil
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Holy Basil', 'Holy Basil', 'Holy Basil', 'Holy Basil', 'Holy Basil', 'Holy Basil', 'Holy Basil', 'Holy Basil', 'Holy Basil', 'Holy Basil', 'Holy Basil', 'Holy Basil', 'Holy Basil'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Clinical', 'Medicine', 'Mechanism', 'Treatment', 'Clinical', 'Treatment', 'Mechanism', 'Clinical', 'Clinical', 'Trial', 'Efficacy', 'Clinical', 'Trial', 'Clinical', 'Trial', 'Clinical', 'Trial', 'Clinical', 'Trial', 'Medicine']}}, 'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Holy Basil', 'Holy Basil', 'Holy Basil'], 'species': [], 'properties': ['Clinical', 'Trial', 'Clinical', 'Trial']}}}}
+\n--- Testing Ginger ---
+SUCCESS: Extracted data for Ginger
+Data: {'mythologies': {'TCM': {'Extracted_Source': {'nomenclature': ['Ginger'], 'species': [], 'properties': ['Medicine', 'Bioactive']}}, 'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger'], 'species': [], 'properties': ['Bioactive', 'Treatment', 'Anti-inflammatory', 'Healing', 'Compound', 'Compound', 'Clinical', 'Pharmacological', 'Efficacy', 'Antioxidant', 'Compound', 'Clinical', 'Medicine', 'Treatment', 'Efficacy', 'Clinical', 'Medicine', 'Treatment', 'Healing', 'Medicine', 'Medicine', 'Antioxidant', 'Medicine', 'Treatment', 'Medicine', 'Clinical', 'Medicine', 'Treatment', 'Efficacy', 'Treatment', 'Efficacy', 'Clinical', 'Medicine', 'Medicine', 'Clinical', 'Trial', 'Clinical', 'Pharmacology', 'Trial', 'Clinical', 'Pharmacology', 'Trial', 'Clinical', 'Trial']}}, 'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger', 'Ginger'], 'species': [], 'properties': ['Medicine', 'Medicine', 'Medicine', 'Medicine', 'Medicine', 'Medicine', 'Medicine', 'Medicine', 'Medicine', 'Medicine']}}}}
+\n--- Testing Garlic ---
+SUCCESS: Extracted data for Garlic
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Garlic', 'Garlic', 'Garlic'], 'species': [], 'properties': ['Compound', 'Medicine', 'Medicine']}}, 'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Garlic', 'Garlic'], 'species': [], 'properties': ['Compound', 'Medicine']}}}}
+\n--- Testing Aloe Vera ---
+SUCCESS: Extracted data for Aloe Vera
+Data: {'mythologies': {'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera'], 'species': [], 'properties': ['Clinical', 'Medicine', 'Clinical', 'Toxicity', 'Medicine', 'Treatment', 'Toxicity', 'Medicine']}}, 'TCM': {'Extracted_Source': {'nomenclature': ['Aloe Vera'], 'species': [], 'properties': ['Clinical', 'Medicine']}}, 'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera', 'Aloe Vera'], 'species': [], 'properties': ['Clinical', 'Toxicity', 'Clinical', 'Medicine', 'Medicine', 'Treatment', 'Compound', 'Compound', 'Toxicity', 'Medicine', 'Toxicity', 'Toxicity', 'Clinical', 'Pharmacological', 'Toxicity', 'Compound', 'Compound', 'Treatment', 'Toxicity', 'Clinical', 'Toxicity', 'Medicine', 'Pharmacological', 'Clinical', 'Medicine', 'Toxicity', 'Clinical', 'Therapeutic', 'Treatment', 'Healing', 'Dosage', 'Dosage']}}}}
+\n--- Testing Echinacea ---
+SUCCESS: Extracted data for Echinacea
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Echinacea', 'Echinacea', 'Echinacea', 'Echinacea', 'Echinacea', 'Echinacea', 'Echinacea'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Medicine', 'Healing', 'Treatment', 'Therapeutic', 'Treatment', 'Healing', 'Clinical', 'Pharmacology', 'Antioxidant']}}, 'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Echinacea', 'Echinacea', 'Echinacea', 'Echinacea', 'Echinacea', 'Echinacea', 'Echinacea'], 'species': [], 'properties': ['Healing', 'Antioxidant', 'Medicine', 'Pharmacology', 'Medicine', 'Antioxidant', 'Medicine', 'Antioxidant', 'Medicine', 'Antioxidant', 'Medicine', 'Antioxidant', 'Medicine', 'Antioxidant']}}}}
+\n--- Testing Ginkgo Biloba ---INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Ginkgo Biloba'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.ginkgo+biloba "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginkgo+Biloba+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginkgo%20Biloba%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://www.mojeek.com/search?q=Ginkgo+Biloba+clinical+trials+site%3Ancbi.nlm.nih.gov 403
+INFO:primp:response: https://search.brave.com/search?q=Ginkgo+Biloba+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web 429
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=IsmgO4COJ9T3CTL868gGW1pL;_ylu=zLj1UUpBF2bMuFbfFYV0AEMKE6SzqDlEHShw83sgaibtADg?p=Ginkgo+Biloba+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginkgo%20Biloba%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginkgo+Biloba+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=Fk6eyceYyuQf677c4J32IOcr;_ylu=6C6bltsCiMbP8etAJbsi1IQdg1w5A-eebq-Rom5e4E5-Y4E?p=Ginkgo+Biloba+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginkgo+Biloba+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginkgo%20Biloba%20site%3Awikipedia.org 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGinkgo%2BBiloba%2Bsite%253Awikipedia.org%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGIGd-tEGIjBg-J-llYKtK3OO-7RVk-Udh3xBaWqnAunk95OIJVnFMp19jh6WeZIIsj-S2rs8spQyAnJSWgFD 429
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.mojeek.com/search?q=Ginkgo+Biloba+site%3Awikipedia.org 403
+INFO:primp:response: https://search.brave.com/search?q=Ginkgo+Biloba+site%3Awikipedia.org&source=web 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=aJsJ_cT6Rij82bGYgmt1v56o;_ylu=WUjWrrmnrTUCnYBpwAVhh8boDTzu4KMUvfHegOLzTDXFPB0?p=Ginkgo+Biloba+site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginkgo+Biloba+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginkgo%20Biloba%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://search.brave.com/search?q=Ginkgo+Biloba+uses+side+effects+site%3A.edu&source=web 429
+INFO:primp:response: https://yandex.com/search/site/?text=Ginkgo+Biloba+uses+side+effects+site%3A.edu&web=1&searchid=1086148 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginkgo+Biloba+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginkgo%20Biloba%20dietary%20supplement%20site%3A.gov 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.mojeek.com/search?q=Ginkgo+Biloba+dietary+supplement+site%3A.gov 403
+INFO:primp:response: https://yandex.com/search/site/?text=Ginkgo+Biloba+dietary+supplement+site%3A.gov&web=1&searchid=3101393 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGinkgo "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F41908799%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F37786872%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.ginkgo+biloba "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Ginseng'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.ginseng "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginseng+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginseng%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.mojeek.com/search?q=Ginseng+clinical+trials+site%3Ancbi.nlm.nih.gov 403
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.brave.com/search?q=Ginseng+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://yandex.com/search/site/?text=Ginseng+clinical+trials+site%3Ancbi.nlm.nih.gov&web=1&searchid=4522505 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginseng+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginseng%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://www.mojeek.com/search?q=Ginseng+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 403
+INFO:primp:response: https://yandex.com/search/site/?text=Ginseng+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=7575196 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginseng+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginseng%20site%3Awikipedia.org 200
+INFO:primp:response: https://search.brave.com/search?q=Ginseng+site%3Awikipedia.org&source=web 429
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=J9mJc1pzSFND62bo0tLe7hQl;_ylu=D5hP17jPrDTfZcPmW0iL6yh2j5R51pAisu34WxjohyUECIU?p=Ginseng+site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginseng+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginseng%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGinseng%2Buses%2Bside%2Beffects%2Bsite%253A.edu%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGJ2d-tEGIjC3uISticufgEOX-BIxaofTQIqtnwPjwzy7lVwxl0JnqVxUO27keCvRoH4eOt3FrLQyAnJSWgFD 429
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.yahoo.com/search;_ylt=E9qgrJVb4yRbKN6Ew1b72Edh;_ylu=ySwOfFgWil9IiS9A6nTY3pP7_CgZ4mE5jntr0YWmcYzfTwM?p=Ginseng+uses+side+effects+site%3A.edu 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Ginseng+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Ginseng%20dietary%20supplement%20site%3A.gov 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://yandex.com/search/site/?text=Ginseng+dietary+supplement+site%3A.gov&web=1&searchid=1735964 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGinseng "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F37385964%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F10571242%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.ginseng "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Lavender'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.lavender "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Lavender+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Lavender%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.brave.com/search?q=Lavender+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DLavender%2Bclinical%2Btrials%2Bsite%253Ancbi.nlm.nih.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGKed-tEGIjCY2PcxVGTS44KQ2rOxEibVpMsLt2gXUp1l23pVT26zsSvCu592-8hv8RlW1uoOk2kyAnJSWgFD 429
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.mojeek.com/search?q=Lavender+clinical+trials+site%3Ancbi.nlm.nih.gov 403
+INFO:primp:response: https://search.yahoo.com/search;_ylt=7TAu-E3Ey_otGm-F8mBkEPN3;_ylu=S1iEmGEFZVG5INRdFpgzWArsaZbFUwUGimrO_4_Ta3k-C8U?p=Lavender+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Lavender+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Lavender%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://yandex.com/search/site/?text=Lavender+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=6034822 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Lavender%20site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Lavender+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=IoUWmC_6LfNqzykUf04wzB4M;_ylu=7MDsxDEwJiMJVLvu2wbveUUEtkxjIbcjOWVTNKRXAXCXjFU?p=Lavender+site%3Awikipedia.org 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DLavender%2Bsite%253Awikipedia.org%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGLCd-tEGIjDfVTgxLaAQ-KH42Y6JRUuxCuQQsNj-NWLRP9Zt7YyeE0XkYHCrvGkkech2eBoGRWQyAnJSWgFD 429
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.mojeek.com/search?q=Lavender+site%3Awikipedia.org 403
+INFO:primp:response: https://yandex.com/search/site/?text=Lavender+site%3Awikipedia.org&web=1&searchid=6222321 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Lavender%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Lavender+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://yandex.com/search/site/?text=Lavender+uses+side+effects+site%3A.edu&web=1&searchid=5435343 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Lavender+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Lavender%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://www.mojeek.com/search?q=Lavender+dietary+supplement+site%3A.gov 403
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.brave.com/search?q=Lavender+dietary+supplement+site%3A.gov&source=web 429
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DLavender%2Bdietary%2Bsupplement%2Bsite%253A.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGLqd-tEGIjBO_b6ovuDxHLz5GX7qt3d6_M2MP2kmFnnRt-9-bwDu-FKCIT-oc9N_V7aQhwh8RgoyAnJSWgFD 429
+INFO:primp:response: https://yandex.com/search/site/?text=Lavender+dietary+supplement+site%3A.gov&web=1&searchid=1152980 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAconitum "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAmethyst "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.lavender "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Chamomile'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.chamomile "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Chamomile+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Chamomile%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.brave.com/search?q=Chamomile+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=F4YM3gHD63HRCqQy54d9H-KT;_ylu=CsnBgc7Ii0G80OO-xnw7481bw9ujuUR_pbotqTdr_xzK6B4?p=Chamomile+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Chamomile+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Chamomile%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=Eb0QNhwywQq8w3ycVIreG-0t;_ylu=44p965IwBXXZO-RkFO6dJsulVqMRhRriowsQjzGmwzD9oW8?p=Chamomile+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DChamomile%2Bpharmacology%2Bsite%253Apubmed.ncbi.nlm.nih.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGIqe-tEGIjBrhkfbD06VVjHIZzpz7rrlHo0fjiu5P-7kSjM5mCxZ785LrUr4ucj3jD3COrQfOy8yAnJSWgFD 429
+INFO:primp:response: https://www.mojeek.com/search?q=Chamomile+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 403
+INFO:primp:response: https://yandex.com/search/site/?text=Chamomile+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=6935721 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Chamomile%20site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Chamomile+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=KJeCUJ8QIVglPNXLdGWG8cjK;_ylu=YLmPW63y__nm2nAqiD0JmLRHHE0cFLvbrEIlQq6AR9x0y2I?p=Chamomile+site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Chamomile+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Chamomile%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DChamomile%2Buses%2Bside%2Beffects%2Bsite%253A.edu%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGJOe-tEGIjBE7ToWga4M3iKm0D017KRuOGx75m3hTs9jKtIn8fwZMEGNCJvznSgeqKS6SAFavpYyAnJSWgFD 429
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.mojeek.com/search?q=Chamomile+uses+side+effects+site%3A.edu 403
+INFO:primp:response: https://yandex.com/search/site/?text=Chamomile+uses+side+effects+site%3A.edu&web=1&searchid=5316145 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Chamomile+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Chamomile%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=PHAQ3BT5Z008lzIxYQHa69AM;_ylu=TBQzsYx3fGB3JHDKzcqs1dSRYM5lFvBEZT3dRGtFbrBXM4w?p=Chamomile+dietary+supplement+site%3A.gov 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FChamomile "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F40665590%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.chamomile "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Peppermint'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.peppermint "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Peppermint%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Peppermint+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=96GDpL2Xzxc5-jghKVMhFXep;_ylu=IR2Ope6B1OROQIVM0fMBOJssjme7OConBcsEaFf4hPREEPw?p=Peppermint+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Peppermint+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Peppermint%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DPeppermint%2Bpharmacology%2Bsite%253Apubmed.ncbi.nlm.nih.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGJ-e-tEGIjArLuLL9b-b2LWO47Mi_CbR2bTY0DflO4ItWGkPnrNVIxko3v02Xd22bUjqGiP4GJ4yAnJSWgFD 429
+INFO:primp:response: https://search.brave.com/search?q=Peppermint+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.mojeek.com/search?q=Peppermint+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 403
+INFO:primp:response: https://search.yahoo.com/search;_ylt=4aI_Gsf6MYKrfszpax6QPe0K;_ylu=CxhYNF_kE_vpDaZp-tgAHgHm7de8V_1h46F16VTUDCGOT7I?p=Peppermint+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://yandex.com/search/site/?text=Peppermint+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=4100683 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Peppermint+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Peppermint%20site%3Awikipedia.org 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=Ik13BzmmVH540qu7M3HNziAX;_ylu=Ow31fd-vVoFL-uKOuiTwWJiYSWiVRDWXRaQageouX5R1soA?p=Peppermint+site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Peppermint+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Peppermint%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DPeppermint%2Buses%2Bside%2Beffects%2Bsite%253A.edu%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGKqe-tEGIjCNekeCnF36mHa_5u3OvMbek-vDQ7L8ZhKHVIbJhBzdV0H__rk9E7WgeMlZFWOMldgyAnJSWgFD 429
+INFO:primp:response: https://search.brave.com/search?q=Peppermint+uses+side+effects+site%3A.edu&source=web 429
+INFO:primp:response: https://yandex.com/search/site/?text=Peppermint+uses+side+effects+site%3A.edu&web=1&searchid=4069406 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Peppermint+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Peppermint%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DPeppermint%2Bdietary%2Bsupplement%2Bsite%253A.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGK6e-tEGIjDWx2y6nEUqE0wq7CfppKNEn6_Rc1hnlVWPcKtzx8WrrUVmIjlsjq915XgAgT7XtD4yAnJSWgFD 429
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.brave.com/search?q=Peppermint+dietary+supplement+site%3A.gov&source=web 429
+INFO:primp:response: https://www.mojeek.com/search?q=Peppermint+dietary+supplement+site%3A.gov 403
+INFO:primp:response: https://search.yahoo.com/search;_ylt=huVACjdHE22_0u8z9DJqK-3Y;_ylu=5OGAbvsxr97QTlY9x2MrhD2wM3o8q-h80Raq3_W3ULdFCxI?p=Peppermint+dietary+supplement+site%3A.gov 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FPeppermint "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fdsld.od.nih.gov%2Flabel%2F237584 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.peppermint "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Rosemary'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.rosemary "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Rosemary+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Rosemary%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.mojeek.com/search?q=Rosemary+clinical+trials+site%3Ancbi.nlm.nih.gov 403
+INFO:primp:response: https://search.yahoo.com/search;_ylt=AIyu_jy1iSr9z1uLuzc6iLwA;_ylu=VOU7u3UI8JC0gGG8HGqTXjYyhGtNTyYyBbcO7_fVYsLrH8M?p=Rosemary+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Rosemary+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Rosemary%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DRosemary%2Bpharmacology%2Bsite%253Apubmed.ncbi.nlm.nih.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGLue-tEGIjBXIM858NJtMGWefEgRcyaWxp3IpBnxG9p_1oSUXGvIfdiY_xgJrHvZJ6JNOkatGL0yAnJSWgFD 429
+INFO:primp:response: https://search.brave.com/search?q=Rosemary+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&source=web 429
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.mojeek.com/search?q=Rosemary+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 403
+INFO:primp:response: https://search.yahoo.com/search;_ylt=M5vv8a0SDv_lb-iP8MzhPGV8;_ylu=BdeYTExzcPazY_rB_A8WYEPtIkYXMRa5p-SqUJ3URGSAMjg?p=Rosemary+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://yandex.com/search/site/?text=Rosemary+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=5960917 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Rosemary+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Rosemary%20site%3Awikipedia.org 200
+INFO:primp:response: https://yandex.com/search/site/?text=Rosemary+site%3Awikipedia.org&web=1&searchid=6347617 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.yahoo.com/search;_ylt=TpZ04oKwVdQMmDeD2tvyYkrW;_ylu=msjhiEPTIMMjcNXqVzfvo9gsjp2Oo4MHdipvrjizDfpiHyA?p=Rosemary+site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Rosemary+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Rosemary%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://search.brave.com/search?q=Rosemary+uses+side+effects+site%3A.edu&source=web 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=Dak9WqcafKMUtBFKzxxFTxRL;_ylu=UyTygYBPLU-1RwBk_t5ZTPTcguaRGSQjFJfO5rc5JGvDLbY?p=Rosemary+uses+side+effects+site%3A.edu 200
+INFO:primp:response: https://yandex.com/search/site/?text=Rosemary+uses+side+effects+site%3A.edu&web=1&searchid=8383633 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Rosemary+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Rosemary%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://www.mojeek.com/search?q=Rosemary+dietary+supplement+site%3A.gov 403
+INFO:primp:response: https://search.yahoo.com/search;_ylt=LsiGD62-GmVuQZIKxtcLwjmp;_ylu=tZX5VPKB2KGuwLKXEvdMAMLk0OnK73rireZ8qEHjT0mpY6w?p=Rosemary+dietary+supplement+site%3A.gov 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FRosemary "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fdsld.od.nih.gov%2Flabel%2F277117 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.rosemary "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Thyme'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.thyme "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Thyme+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Thyme%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://yandex.com/search/site/?text=Thyme+clinical+trials+site%3Ancbi.nlm.nih.gov&web=1&searchid=2119096 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Thyme+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Thyme%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=goODFp8rjCy1GHdm3wC2boLG;_ylu=r8MCbqnkWyi6h6Jvgk3Yt2w2Yf0EMGdxwWUGHJvawJKEDjw?p=Thyme+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Thyme+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Thyme%20site%3Awikipedia.org 200
+INFO:primp:response: https://yandex.com/search/site/?text=Thyme+site%3Awikipedia.org&web=1&searchid=3563310 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DThyme%2Bsite%253Awikipedia.org%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGNWe-tEGIjDfM8Dw12aX8ALOVMHBhY1Kr7ZSuKwZ8vUK14lEpUa47lqjbnGlhoqmx8ebN7_NjFEyAnJSWgFD 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=wR1LepKGl88hiIKRuRcmZ2_Q;_ylu=0FF6PbSDQqe4Hly8KB6lhgzc98s1Lwlziy-mkxgmPIfM5dI?p=Thyme+site%3Awikipedia.org 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.brave.com/search?q=Thyme+site%3Awikipedia.org&source=web 429
+INFO:primp:response: https://www.mojeek.com/search?q=Thyme+site%3Awikipedia.org 403
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Thyme%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Thyme+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DThyme%2Buses%2Bside%2Beffects%2Bsite%253A.edu%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGNqe-tEGIjBm_pnLtNZxaYWpgASIPz3hwh8eW8cwRYZVx-gHE7xS7WBwNOOirmjpCDt2gKFk4EgyAnJSWgFD 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=wKLGFoAyhFc-ABPzrQ020RUS;_ylu=25yQhGRDvm5M0JDKHkU_de_ZeVBV5pYvzWwnKdLIBO0x03A?p=Thyme+uses+side+effects+site%3A.edu 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Thyme+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Thyme%20dietary%20supplement%20site%3A.gov 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.brave.com/search?q=Thyme+dietary+supplement+site%3A.gov&source=web 429
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.mojeek.com/search?q=Thyme+dietary+supplement+site%3A.gov 403
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DThyme%2Bdietary%2Bsupplement%2Bsite%253A.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGOCe-tEGIjAFbELlWpOKhZ8zKPMcauiq-S3yGhO9Ia91gsOj_OIoodX8_FbKpSL8h8GLR2qS3tQyAnJSWgFD 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=U6KqBdAKEhJ4PMto96mxIlGM;_ylu=xbq5yEe9HdM3FgeigZw1IOUd88FPZifD726RRjRe1x8D7Wg?p=Thyme+dietary+supplement+site%3A.gov 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fdsld.od.nih.gov%2Flabel%2F277119 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fdbgap.ncbi.nlm.nih.gov%2Fhome%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.thyme "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Sage'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.sage "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Sage+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Sage%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://search.brave.com/search?q=Sage+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://www.mojeek.com/search?q=Sage+clinical+trials+site%3Ancbi.nlm.nih.gov 403
+INFO:primp:response: https://yandex.com/search/site/?text=Sage+clinical+trials+site%3Ancbi.nlm.nih.gov&web=1&searchid=3998780 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Sage+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Sage%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://yandex.com/search/site/?text=Sage+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=4604424 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Sage+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Sage%20site%3Awikipedia.org 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DSage%2Bsite%253Awikipedia.org%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGO2e-tEGIjABZlnMVL1WhviTpbuNNtY6CHn9-o9O2wIaLN4zSGPYmshCb9WP78TAm0R_Q7Q7TScyAnJSWgFD 429
+INFO:primp:response: https://www.mojeek.com/search?q=Sage+site%3Awikipedia.org 403
+INFO:primp:response: https://search.yahoo.com/search;_ylt=lNJ8aPkUyXqG44pG-9aJU3GQ;_ylu=NYHAPsKPZx7HJv2H5netC_SGY_FcOqN2woK5Mi6ytE4eM9Q?p=Sage+site%3Awikipedia.org 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Sage%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Sage+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DSage%2Buses%2Bside%2Beffects%2Bsite%253A.edu%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGPOe-tEGIjAl0CvvxHYA6dX8wrI8jAv_65K990UXX1_OuuYjGcoOdjC6Y_vU7-L5OzIcAeLHY1AyAnJSWgFD 429
+INFO:primp:response: https://search.brave.com/search?q=Sage+uses+side+effects+site%3A.edu&source=web 429
+INFO:primp:response: https://yandex.com/search/site/?text=Sage+uses+side+effects+site%3A.edu&web=1&searchid=9571923 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Sage%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Sage+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://search.brave.com/search?q=Sage+dietary+supplement+site%3A.gov&source=web 429
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.yahoo.com/search;_ylt=cJv_BlrAlAfWWcsvTFjUyG_Q;_ylu=GXXDBtNOgBGL81u9Pn8WCHc2KJnX_RWTofyRs2g0zVmSY08?p=Sage+dietary+supplement+site%3A.gov 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+ERROR:core.proxy_client:Exception fetching https://pubmed.ncbi.nlm.nih.gov/:
+ERROR:core.proxy_client:Exception fetching https://en.wikipedia.org/wiki/Sage:
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fwww.nccih.nih.gov%2Fhealth%2Fsage "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.sage "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Oregano'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.oregano "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Oregano+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Oregano%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://www.mojeek.com/search?q=Oregano+clinical+trials+site%3Ancbi.nlm.nih.gov 403
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DOregano%2Bclinical%2Btrials%2Bsite%253Ancbi.nlm.nih.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGKGf-tEGIjDPXL6YiCeSUYQvktz5TXG0hNHdSutikU7giFZpHJjJj4L2DX8oq3Vdg6WCu7DaqYwyAnJSWgFD 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=2bCDijaMzHXO2iO4GbDT6zTj;_ylu=gEDJGePaf9AyPJjlN1MThpUxpvCFzaGBptjjJD4neIEn0J8?p=Oregano+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://yandex.com/search/site/?text=Oregano+clinical+trials+site%3Ancbi.nlm.nih.gov&web=1&searchid=3860437 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Oregano+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Oregano%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://search.brave.com/search?q=Oregano+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://yandex.com/search/site/?text=Oregano+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=5413660 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Oregano+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Oregano%20site%3Awikipedia.org 200
+INFO:primp:response: https://search.brave.com/search?q=Oregano+site%3Awikipedia.org&source=web 429
+INFO:primp:response: https://search.yahoo.com/search;_ylt=mtmbjuvU0BpFw_JAWhv9pBbI;_ylu=hPuJl6Rf5S1Z0LWZ-Wym16rrpyBxQr3Cl1apbhGvVk8D6ZQ?p=Oregano+site%3Awikipedia.org 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://yandex.com/search/site/?text=Oregano+site%3Awikipedia.org&web=1&searchid=7270542 200
+INFO:primp:response: https://www.mojeek.com/search?q=Oregano+site%3Awikipedia.org 403
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DOregano%2Bsite%253Awikipedia.org%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGK6f-tEGIjB82A2FmBjvOiGJmHQui2kIYik6YIz0kQbSBzb3ccG-Y0jUs1ntBtBdK3M934m5zBgyAnJSWgFD 429
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Oregano+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Oregano%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://www.mojeek.com/search?q=Oregano+uses+side+effects+site%3A.edu 403
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://yandex.com/search/site/?text=Oregano+uses+side+effects+site%3A.edu&web=1&searchid=5651897 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Oregano+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Oregano%20dietary%20supplement%20site%3A.gov 200
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:primp:response: https://search.yahoo.com/search;_ylt=LRUGF12e70uI9MyNTw65JtuQ;_ylu=_6sMZasNhU4kFY9ugImUozTB7gRcQQ2gQzNKkwL0PmBtDC0?p=Oregano+dietary+supplement+site%3A.gov 200
+INFO:primp:response: https://yandex.com/search/site/?text=Oregano+dietary+supplement+site%3A.gov&web=1&searchid=6129897 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2Fclinical%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F30641124%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.oregano "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Cinnamon'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.cinnamon "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Cinnamon+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Cinnamon%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://www.mojeek.com/search?q=Cinnamon+clinical+trials+site%3Ancbi.nlm.nih.gov 403
+INFO:primp:response: https://search.yahoo.com/search;_ylt=UcLVIYnfj3occZCvcPeBS1H-;_ylu=vZdEkIk5E3dtlwVqBzh67n8vP2xgDXcyG13LksFGVqLXd_Y?p=Cinnamon+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.brave.com/search?q=Cinnamon+clinical+trials+site%3Ancbi.nlm.nih.gov&source=web 429
+INFO:httpx:HTTP Request: POST https://html.duckduckgo.com/html/ "HTTP/2 202 Accepted"
+INFO:ddgs.ddgs:Error in engine duckduckgo: DDGSException("RemoteProtocolError: RemoteProtocolError('Server disconnected')")
+INFO:primp:response: https://yandex.com/search/site/?text=Cinnamon+clinical+trials+site%3Ancbi.nlm.nih.gov&web=1&searchid=5546820 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Cinnamon+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Cinnamon%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://yandex.com/search/site/?text=Cinnamon+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=5540322 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Cinnamon+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Cinnamon%20site%3Awikipedia.org 200
+INFO:ddgs.ddgs:Error in engine duckduckgo: TimeoutException("Request timed out: ConnectTimeout('timed out')")
+INFO:primp:response: https://search.yahoo.com/search;_ylt=5sMMkFHNUHkSy9UBOJyQpngK;_ylu=anfUTJIT0sqiQSby8n4sBMTaBHckJXcc5Jf8NIEbcbZOcmQ?p=Cinnamon+site%3Awikipedia.org 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DCinnamon%2Bsite%253Awikipedia.org%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGMmf-tEGIjAsF5905EKfN08Yne6IuOlIAtYcyFQrBpJtjp2bT8BSItF-JGqBj70h5M7z5fDxJxwyAnJSWgFD 429
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Cinnamon+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Cinnamon%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DCinnamon%2Buses%2Bside%2Beffects%2Bsite%253A.edu%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGM6f-tEGIjDuELeGUFf-ie4PpE1ge-UpPpJyqIv051TBq0NgXCSb0y9na0V-KKbqG1J7GkyjZMYyAnJSWgFD 429
+INFO:ddgs.ddgs:Error in engine duckduckgo: TimeoutException("Request timed out: ConnectTimeout('timed out')")
+INFO:primp:response: https://search.yahoo.com/search;_ylt=2x1M6iKRSGg4aUQgybXYUt9f;_ylu=xuaGkoc3-giI4ugmLKjRKTjaIZyeCy5JSyEvu8dXQa-cVE0?p=Cinnamon+uses+side+effects+site%3A.edu 200
+INFO:primp:response: https://www.mojeek.com/search?q=Cinnamon+uses+side+effects+site%3A.edu 403
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Cinnamon+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Cinnamon%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://yandex.com/search/site/?text=Cinnamon+dietary+supplement+site%3A.gov&web=1&searchid=3037952 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FCinnamon "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FCinnamomum "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.cinnamon "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+
+SUCCESS: Extracted data for Ginkgo Biloba
+Data: {'mythologies': {'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Ginkgo Biloba', 'Ginkgo Biloba'], 'species': [], 'properties': ['Clinical', 'Medicine', 'Clinical', 'Medicine']}}, 'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba', 'Ginkgo Biloba'], 'species': [], 'properties': ['Clinical', 'Treatment', 'Clinical', 'Trial', 'Clinical', 'Trial', 'Clinical', 'Trial', 'Treatment', 'Clinical', 'Treatment', 'Clinical', 'Clinical', 'Treatment', 'Mechanism', 'Pharmacology', 'Treatment', 'Mechanism', 'Pharmacology', 'Compound', 'Clinical', 'Treatment', 'Mechanism', 'Pharmacology', 'Clinical', 'Treatment', 'Mechanism', 'Pharmacology', 'Treatment', 'Mechanism', 'Pharmacology', 'Treatment', 'Mechanism', 'Pharmacology']}}, 'TCM': {'Extracted_Source': {'nomenclature': ['Ginkgo Biloba', 'Ginkgo Biloba'], 'species': [], 'properties': ['Pharmacology', 'Compound', 'Medicine', 'Treatment', 'Pharmacological', 'Mechanism', 'Clinical', 'Pharmacology', 'Medicine', 'Treatment', 'Pharmacological', 'Mechanism']}}}}
+\n--- Testing Ginseng ---
+SUCCESS: Extracted data for Ginseng
+Data: {'mythologies': {'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng'], 'species': [], 'properties': ['Clinical', 'Medicine', 'Clinical', 'Medicine', 'Therapeutic', 'Clinical', 'Medicine', 'Clinical', 'Medicine', 'Phytochemical', 'Medicine', 'Clinical']}}, 'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng'], 'species': [], 'properties': ['Treatment', 'Medicine', 'Medicine', 'Clinical', 'Efficacy', 'Pharmacology', 'Efficacy', 'Efficacy', 'Toxicity', 'Clinical', 'Medicine', 'Phytochemical', 'Efficacy', 'Medicine', 'Efficacy', 'Efficacy', 'Healing', 'Clinical', 'Efficacy', 'Toxicity', 'Clinical', 'Pharmacology', 'Clinical', 'Pharmacology', 'Pharmacological', 'Pharmacology', 'Pharmacological', 'Pharmacology', 'Pharmacology', 'Pharmacology', 'Clinical', 'Clinical', 'Treatment', 'Trial', 'Clinical', 'Medicine', 'Pharmacology', 'Trial', 'Medicine', 'Pharmacology', 'Pharmacological', 'Pharmacological']}}, 'TCM': {'Extracted_Source': {'nomenclature': ['Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng', 'Ginseng'], 'species': [], 'properties': ['Medicine', 'Pharmacology', 'Pharmacological', 'Bioactive', 'Medicine', 'Pharmacological', 'Bioactive', 'Medicine', 'Pharmacological', 'Bioactive', 'Medicine', 'Phytochemical', 'Medicine', 'Clinical', 'Medicine', 'Pharmacology', 'Clinical', 'Medicine', 'Pharmacology', 'Pharmacological', 'Clinical', 'Medicine', 'Pharmacology', 'Pharmacological']}}}}
+\n--- Testing Lavender ---
+SUCCESS: Extracted data for Lavender
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Medicine', 'Medicine', 'Pharmacological', 'Medicine', 'Treatment', 'Trial', 'Toxicity', 'Alkaloid', 'Clinical', 'Alkaloid', 'Medicine', 'Treatment', 'Clinical', 'Clinical', 'Trial', 'Clinical']}}, 'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Lavender', 'Lavender', 'Lavender', 'Lavender', 'Lavender'], 'species': [], 'properties': ['Medicine', 'Treatment', 'Medicine', 'Treatment', 'Medicine', 'Clinical']}}, 'TCM': {'Extracted_Source': {'nomenclature': ['Lavender', 'Lavender', 'Lavender'], 'species': [], 'properties': ['Medicine', 'Medicine', 'Alkaloid', 'Medicine']}}}}
+\n--- Testing Chamomile ---
+SUCCESS: Extracted data for Chamomile
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile', 'Chamomile'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Clinical', 'Clinical', 'Clinical', 'Clinical', 'Medicine', 'Clinical', 'Clinical', 'Medicine', 'Clinical', 'Medicine', 'Medicine', 'Pharmacological', 'Clinical', 'Pharmacological', 'Medicine', 'Clinical', 'Medicine', 'Anti-inflammatory', 'Therapeutic', 'Efficacy', 'Clinical', 'Anti-inflammatory', 'Efficacy', 'Pharmacological', 'Phytochemical', 'Anti-inflammatory', 'Clinical', 'Pharmacological', 'Trial', 'Phytochemical', 'Clinical', 'Medicine', 'Anti-inflammatory', 'Pharmacology', 'Anti-inflammatory', 'Therapeutic', 'Medicine', 'Pharmacology', 'Anti-inflammatory', 'Therapeutic', 'Clinical', 'Trial', 'Therapeutic', 'Clinical', 'Anti-inflammatory', 'Clinical', 'Anti-inflammatory']}}, 'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Chamomile', 'Chamomile'], 'species': [], 'properties': ['Clinical', 'Anti-inflammatory', 'Anti-inflammatory']}}}}
+\n--- Testing Peppermint ---
+SUCCESS: Extracted data for Peppermint
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Peppermint', 'Peppermint', 'Peppermint', 'Peppermint', 'Peppermint', 'Peppermint', 'Peppermint', 'Peppermint', 'Peppermint', 'Peppermint', 'Peppermint', 'Peppermint', 'Peppermint'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Medicine', 'Treatment', 'Medicine', 'Pharmacology', 'Clinical', 'Treatment', 'Pharmacology', 'Efficacy', 'Clinical', 'Treatment', 'Antioxidant', 'Medicine', 'Bioactive', 'Medicine', 'Medicine', 'Phytochemical']}}, 'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Peppermint'], 'species': [], 'properties': ['Medicine', 'Treatment']}}}}
+\n--- Testing Rosemary ---
+SUCCESS: Extracted data for Rosemary
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Rosemary', 'Rosemary', 'Rosemary', 'Rosemary', 'Rosemary'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Medicine']}}}}
+\n--- Testing Thyme ---
+SUCCESS: Extracted data for Thyme
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Thyme', 'Thyme', 'Thyme', 'Thyme', 'Thyme', 'Thyme'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Medicine', 'Medicine']}}}}
+\n--- Testing Sage ---
+SUCCESS: Extracted data for Sage
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Sage', 'Sage', 'Sage'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Treatment']}}}}
+\n--- Testing Oregano ---
+SUCCESS: Extracted data for Oregano
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Oregano', 'Oregano', 'Oregano', 'Oregano', 'Oregano', 'Oregano', 'Oregano', 'Oregano', 'Oregano', 'Oregano'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Clinical', 'Medicine', 'Mechanism', 'Treatment', 'Clinical', 'Treatment', 'Mechanism', 'Clinical', 'Pharmacology', 'Pharmacology', 'Medicine']}}}}
+\n--- Testing Cinnamon ---
+SUCCESS: Extracted data for Cinnamon
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon', 'Cinnamon'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Treatment', 'Toxicity', 'Clinical', 'Medicine', 'Clinical', 'Medicine', 'Medicine', 'Trial', 'Clinical', 'Trial', 'Therapeutic', 'Toxicity', 'Clinical', 'Clinical', 'Receptor', 'Treatment']}}, 'Traditional/Folk': {'Extracted_Source': {'nomenclature': ['Cinnamon', 'Cinnamon'], 'species': [], 'properties': ['Medicine', 'Therapeutic']}}}}INFO:core.pipeline:Initiating Hybrid Pipeline for: 'Cardamom'
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=%2A&herb_name=eq.cardamom "HTTP/2 400 Bad Request"
+WARNING:core.pipeline:Supabase pre-flight failed: {'message': 'column botanical_data.herb_name does not exist', 'code': '42703', 'hint': None, 'details': None}
+INFO:core.radar:Running Tier 1 Scraper (Institutional)...
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Cardamom+clinical+trials+site%3Ancbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Cardamom%20clinical%20trials%20site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=SKbgNziuMPGheeT8ycpAnBYG;_ylu=DpSf-Qu4pZkF0_TEsof_B6xTU6HOlQE9ecLoirBSSpiLbzc?p=Cardamom+clinical+trials+site%3Ancbi.nlm.nih.gov 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Cardamom+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Cardamom%20pharmacology%20site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=Uqu3-2Sja5Xw3X-c2tZuKmyT;_ylu=UdgTy-kk2ULF68-EsJWZ3RY0CKd-wpZO7VQWXaC_JGQm-bw?p=Cardamom+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov 200
+INFO:primp:response: https://search.brave.com/search?q=Cardamom+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&source=web 429
+INFO:primp:response: https://yandex.com/search/site/?text=Cardamom+pharmacology+site%3Apubmed.ncbi.nlm.nih.gov&web=1&searchid=6430913 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Cardamom+site%3Awikipedia.org&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Cardamom%20site%3Awikipedia.org 200
+INFO:primp:response: https://search.yahoo.com/search;_ylt=ndJUHJIOGmmYWyMKG0nTYl0s;_ylu=wmzXltH0kBsqiDyfMODsXTLabcE7WWajYhCrGOo37x91QiM?p=Cardamom+site%3Awikipedia.org 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Cardamom+uses+side+effects+site%3A.edu&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Cardamom%20uses%20side%20effects%20site%3A.edu 200
+INFO:primp:response: https://www.mojeek.com/search?q=Cardamom+uses+side+effects+site%3A.edu 403
+INFO:primp:response: https://search.yahoo.com/search;_ylt=Q0eASwJSpPx4d3vqwuXsaB40;_ylu=bmRJ0xWuxOwpfoPFXcP9rLhFbwojv-xhVUGnjlq0rNMZU4g?p=Cardamom+uses+side+effects+site%3A.edu 200
+INFO:primp:response: https://grokipedia.com/api/typeahead?query=Cardamom+dietary+supplement+site%3A.gov&limit=1 200
+INFO:primp:response: https://en.wikipedia.org/w/api.php?action=opensearch&profile=fuzzy&limit=1&search=Cardamom%20dietary%20supplement%20site%3A.gov 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://www.startpage.com/sp/captcha 200
+INFO:primp:response: https://search.brave.com/search?q=Cardamom+dietary+supplement+site%3A.gov&source=web 429
+INFO:primp:response: https://www.mojeek.com/search?q=Cardamom+dietary+supplement+site%3A.gov 403
+INFO:primp:response: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DCardamom%2Bdietary%2Bsupplement%2Bsite%253A.gov%26filter%3D1%26start%3D0%26hl%3Den-US%26lr%3Dlang_en%26cr%3DcountryUS&hl=en-US&q=EhD9o-ciCsMAEABmsRsKhBERGOyf-tEGIjCMJf2B4EAz_cUh1hE-Aw6ApBHxJ_M5JoZJwEAAszrzGnmhpXr1nVJlx72HzONDpugyAnJSWgFD 429
+INFO:primp:response: https://yandex.com/search/site/?text=Cardamom+dietary+supplement+site%3A.gov&web=1&searchid=8509804 200
+INFO:core.radar:Tier 1 yielded sufficient results.
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FCardamom "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://cors-proxy-worker.ethnodock-engine.workers.dev?url=https%3A%2F%2Fpubmed.ncbi.nlm.nih.gov%2F3878193%2F "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: GET https://fjppskrwfqxveaafthjm.supabase.co/rest/v1/botanical_data?select=master_matrix&herb_name=eq.cardamom "HTTP/2 400 Bad Request"
+WARNING:core.triangulator:Triangulator failed to fetch existing claims for cross-referencing: {'message': 'column botanical_data.master_matrix does not exist', 'code': '42703', 'hint': None, 'details': None}
+
+\n--- Testing Cardamom ---
+SUCCESS: Extracted data for Cardamom
+Data: {'mythologies': {'Unknown_Mythology': {'Extracted_Source': {'nomenclature': ['Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom', 'Cardamom'], 'species': [], 'properties': ['Clinical', 'Trial', 'Medicine', 'Clinical', 'Medicine', 'Compound', 'Therapeutic', 'Medicine', 'Metabolism', 'Pharmacology', 'Therapeutic', 'Toxicity', 'Pharmacology', 'Dosage', 'Pharmacology', 'Therapeutic', 'Metabolism', 'Pharmacology', 'Pharmacology', 'Therapeutic', 'Pharmacology', 'Therapeutic', 'Medicine', 'Metabolism', 'Pharmacology', 'Medicine', 'Pharmacology', 'Pharmacology']}}, 'Ayurveda': {'Extracted_Source': {'nomenclature': ['Cardamom'], 'species': [], 'properties': ['Compound']}}}}
+\n--- Test Results ---
+Total Successes: 20/20
+Total Failures: 0/20
+ALL TESTS PASSED.

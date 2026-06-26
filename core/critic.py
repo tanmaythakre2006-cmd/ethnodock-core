@@ -61,7 +61,7 @@ def count_term_occurrences(text: str, terms: set) -> int:
             count += 1
     return count
 
-def calculate_chunk_score(chunk: str) -> float:
+def calculate_chunk_score(chunk: str, target_herb: str = "") -> float:
     """
     Calculates a Confidence Score for a chunk using a density approach.
     """
@@ -80,9 +80,17 @@ def calculate_chunk_score(chunk: str) -> float:
     history_count = count_term_occurrences(chunk_lower, HISTORY_TERMS)
     noise_count = count_term_occurrences(chunk_lower, NOISE_TERMS)
 
+    # Target awareness
+    target_count = 0
+    if target_herb:
+        target_count = len(re.findall(rf'\b{re.escape(target_herb.lower())}\b', chunk_lower))
+
     # Weighting the scores
     # We want chunks that are dense in relevant terms.
     positive_score = (botanical_count * 1.5) + (pharma_count * 2.0) + (history_count * 1.5)
+
+    # Positive multiplier for target occurrences
+    positive_score += (target_count * 5.0)
 
     # Density factor: if chunk is long but has few keywords, it's diluted.
     # Normalizing by words per 100
@@ -90,20 +98,22 @@ def calculate_chunk_score(chunk: str) -> float:
 
     base_score = positive_score / density_factor
 
-    # Heavy penalty for noise
-    penalty = noise_count * 5.0
+    # Fractional dampener for noise instead of flat subtraction
+    if noise_count > 0:
+        dampener = 1.0 - min(0.9, noise_count * 0.1) # Max 90% reduction
+        base_score *= dampener
 
-    final_score = base_score - penalty
+    final_score = base_score
 
     return final_score
 
-def evaluate_chunks(chunks: list[str]) -> list[dict]:
+def evaluate_chunks(chunks: list[str], target_herb: str = "") -> list[dict]:
     """
     Applies scoring to all chunks and returns structured evaluations.
     """
     evaluated = []
     for chunk in chunks:
-        score = calculate_chunk_score(chunk)
+        score = calculate_chunk_score(chunk, target_herb)
         evaluated.append({
             "text": chunk,
             "score": score

@@ -51,8 +51,7 @@ class LogicTriangulator:
 
         for term in PHARMA_TERMS:
             if re.search(rf'\b{re.escape(term)}\b', text_lower):
-                if term in ["anti-inflammatory", "antioxidant", "healing", "therapeutic", "bioactive"]:
-                    properties_found.add(term.capitalize())
+                properties_found.add(term.capitalize())
 
         # Cross-reference: If we found claims, we can verify them against DB,
         # but also if the text contains a claim already in the DB, we definitely keep it.

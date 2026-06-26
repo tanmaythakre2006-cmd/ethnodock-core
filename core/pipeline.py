@@ -43,7 +43,7 @@ async def run_autonomous_extraction(herb_name: str, api_key: str = "", max_urls:
         return master_matrix, {}
 
     # --- Step 2: Orchestrate Council ---
-    council_results = await orchestrate_council(urls)
+    council_results = await orchestrate_council(urls, herb_name)
 
     # --- Step 3: Data Router ---
     stream_a_matrices = []
