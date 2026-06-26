@@ -5,7 +5,7 @@ import random
 from typing import List, Dict, Any
 from urllib.parse import urlparse, urlunparse
 
-from ddgs import DDGS
+from duckduckgo_search import DDGS
 
 logger = logging.getLogger(__name__)
 
