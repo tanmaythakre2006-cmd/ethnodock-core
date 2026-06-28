@@ -5,49 +5,116 @@ import re
 
 logger = logging.getLogger(__name__)
 
+def _is_valid_synonym(synonym: str) -> bool:
+    """
+    Implements a strict exclusion filter to drop nonsense, commercial products,
+    recipes, physical states, and codes.
+    """
+    synonym = synonym.strip()
+    if not synonym:
+        return False
+
+    synonym_lower = synonym.lower()
+
+    # DROP any string containing numbers
+    if re.search(r'\d', synonym):
+        return False
+
+    # DROP any string containing all-caps alphanumeric codes/words that look like codes
+    # Check if string has any uppercase word with numbers (already caught by \d)
+    # Check if entirely uppercase and looks like a code (e.g. CAPA)
+    # Just checking for all uppercase words without spaces might be too aggressive for acronyms,
+    # but the \d check handles "CAPA23". Let's also block words that are pure caps and > 3 letters
+    # unless it's a known valid acronym (but herbs rarely are).
+    # We will just rely on \d for codes and specific banned words.
+
+    # Banned words
+    banned_words = [
+        'powder', 'rice', 'extract', 'juice', 'pill', 'capsule', 'drink', 'recipe',
+        'plant', 'common', 'medicinal', 'brand', 'product', 'fruit', 'leaf', 'root',
+        'seed', 'oil', 'tea', 'supplement', 'chikara'
+    ]
+
+    for word in banned_words:
+        if re.search(rf'\b{word}\b', synonym_lower):
+            return False
+
+    return True
+
 async def get_synonyms(herb_name: str) -> list[str]:
     """
-    Finds global, cultural, and linguistic synonyms for a generalized herb name using Wikipedia.
+    Finds global, cultural, and linguistic synonyms for a generalized herb name using Wikidata.
+    This ensures we pull structured taxonomic and alias data rather than lazy redirects.
     """
     synonyms = [herb_name]
-    url = f"https://en.wikipedia.org/w/api.php?action=query&prop=redirects&titles={herb_name}&format=json"
+
+    # Use Wikidata wbsearchentities
+    search_url = f"https://www.wikidata.org/w/api.php?action=wbsearchentities&search={herb_name}&language=en&format=json"
 
     try:
         from core.proxy_client import fetch_via_proxy
         async with httpx.AsyncClient(http2=True, timeout=10.0, follow_redirects=True) as client:
-            # 1. Fetch redirects (e.g. alternate names)
-            resp_html = await fetch_via_proxy(client, url)
-            if resp_html:
-                try:
-                    data = json.loads(resp_html)
-                    pages = data.get("query", {}).get("pages", {})
-                    for page_id, page_info in pages.items():
-                        redirects = page_info.get("redirects", [])
-                        for rd in redirects:
-                            title = rd.get("title")
-                            if title and title.lower() not in [s.lower() for s in synonyms] and len(title.split()) <= 3:
-                                synonyms.append(title)
-                except Exception as e:
-                    logger.debug(f"JSON decode failed for Wikipedia redirects: {e}")
+            resp_html = await fetch_via_proxy(client, search_url)
+            if not resp_html:
+                return list(set([s for s in synonyms if _is_valid_synonym(s)]))[:8]
 
-            # 2. Try to extract bolded alternative names from the summary extract
-            extract_url = f"https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&titles={herb_name}&format=json"
-            extract_html = await fetch_via_proxy(client, extract_url)
-            if extract_html:
-                try:
-                    extract_data = json.loads(extract_html)
-                    ext_pages = extract_data.get("query", {}).get("pages", {})
-                    for page_id, page_info in ext_pages.items():
-                        extract = page_info.get("extract", "")
-                        bolds = re.findall(r'<b>(.*?)</b>', extract)
-                        for b in bolds:
-                            clean_b = re.sub(r'<[^>]+>', '', b).strip()
-                            if clean_b and clean_b.lower() not in [s.lower() for s in synonyms] and len(clean_b.split()) <= 4:
-                                synonyms.append(clean_b)
-                except Exception as e:
-                    logger.debug(f"JSON decode failed for Wikipedia extract: {e}")
+            try:
+                data = json.loads(resp_html)
+            except json.JSONDecodeError as e:
+                logger.debug(f"JSON decode failed for Wikidata search: {e}")
+                return list(set([s for s in synonyms if _is_valid_synonym(s)]))[:8]
+
+            if not data.get("search"):
+                return list(set([s for s in synonyms if _is_valid_synonym(s)]))[:8]
+
+            entity_id = data["search"][0]["id"]
+
+            # Fetch entity claims
+            entity_url = f"https://www.wikidata.org/w/api.php?action=wbgetentities&ids={entity_id}&languages=en&format=json"
+            ent_resp_html = await fetch_via_proxy(client, entity_url)
+            if not ent_resp_html:
+                return list(set([s for s in synonyms if _is_valid_synonym(s)]))[:8]
+
+            try:
+                ent_data = json.loads(ent_resp_html)
+            except json.JSONDecodeError as e:
+                logger.debug(f"JSON decode failed for Wikidata getentities: {e}")
+                return list(set([s for s in synonyms if _is_valid_synonym(s)]))[:8]
+
+            entity = ent_data.get("entities", {}).get(entity_id, {})
+            claims = entity.get("claims", {})
+
+            # 1. Aliases
+            aliases = entity.get("aliases", {}).get("en", [])
+            for a in aliases:
+                val = a.get("value")
+                if val and len(val.split()) <= 4:
+                    synonyms.append(val)
+
+            # 2. P225 (Taxon Name)
+            if "P225" in claims:
+                for c in claims["P225"]:
+                    val = c.get("mainsnak", {}).get("datavalue", {}).get("value")
+                    if val and len(val.split()) <= 4:
+                        synonyms.append(val)
+
+            # 3. P1843 (Taxon Common Name)
+            if "P1843" in claims:
+                for c in claims["P1843"]:
+                    val = c.get("mainsnak", {}).get("datavalue", {}).get("value", {}).get("text")
+                    if val and len(val.split()) <= 4:
+                        synonyms.append(val)
 
     except Exception as e:
         logger.warning(f"Synonym extraction failed for {herb_name}: {e}")
 
-    return list(set(synonyms))[:8] # Cap at 8 synonyms to avoid explosion
+    # Deduplicate and filter
+    filtered_synonyms = []
+    seen = set()
+    for s in synonyms:
+        s_lower = s.lower()
+        if s_lower not in seen and _is_valid_synonym(s):
+            filtered_synonyms.append(s)
+            seen.add(s_lower)
+
+    return filtered_synonyms[:8] # Cap at 8 synonyms to avoid explosion
