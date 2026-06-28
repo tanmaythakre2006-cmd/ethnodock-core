@@ -1,0 +1,825 @@
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+<frozen importlib._bootstrap>:162: ResourceWarning: unclosed <ssl.SSLSocket fd=98, family=2, type=1, proto=6, laddr=('192.168.0.2', 38814), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:680: ResourceWarning: unclosed <ssl.SSLSocket fd=102, family=2, type=1, proto=6, laddr=('192.168.0.2', 34828), raddr=('104.18.38.10', 443)>
+  elif content is not None and any(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/app/core/radar.py:88: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+  asyncio.to_thread(lambda: list(DDGS().text(query, max_results=2))),
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=6, family=2, type=1, proto=6, laddr=('192.168.0.2', 39498), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=7, family=2, type=1, proto=6, laddr=('192.168.0.2', 39514), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=9, family=2, type=1, proto=6, laddr=('192.168.0.2', 39526), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=11, family=2, type=1, proto=6, laddr=('192.168.0.2', 39536), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=13, family=2, type=1, proto=6, laddr=('192.168.0.2', 39548), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=15, family=2, type=1, proto=6, laddr=('192.168.0.2', 39560), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=17, family=2, type=1, proto=6, laddr=('192.168.0.2', 39562), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=19, family=2, type=1, proto=6, laddr=('192.168.0.2', 39572), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=21, family=2, type=1, proto=6, laddr=('192.168.0.2', 43968), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=24, family=2, type=1, proto=6, laddr=('192.168.0.2', 46268), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=8, family=2, type=1, proto=6, laddr=('192.168.0.2', 37862), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=10, family=2, type=1, proto=6, laddr=('192.168.0.2', 37878), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=12, family=2, type=1, proto=6, laddr=('192.168.0.2', 37890), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=14, family=2, type=1, proto=6, laddr=('192.168.0.2', 37892), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=16, family=2, type=1, proto=6, laddr=('192.168.0.2', 37904), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=18, family=2, type=1, proto=6, laddr=('192.168.0.2', 37916), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=20, family=2, type=1, proto=6, laddr=('192.168.0.2', 37926), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=22, family=2, type=1, proto=6, laddr=('192.168.0.2', 46264), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=23, family=2, type=1, proto=6, laddr=('192.168.0.2', 43976), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=25, family=2, type=1, proto=6, laddr=('192.168.0.2', 43990), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=27, family=2, type=1, proto=6, laddr=('192.168.0.2', 44004), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=29, family=2, type=1, proto=6, laddr=('192.168.0.2', 44020), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=31, family=2, type=1, proto=6, laddr=('192.168.0.2', 44024), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=33, family=2, type=1, proto=6, laddr=('192.168.0.2', 44028), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=35, family=2, type=1, proto=6, laddr=('192.168.0.2', 44032), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=37, family=2, type=1, proto=6, laddr=('192.168.0.2', 44036), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=39, family=2, type=1, proto=6, laddr=('192.168.0.2', 44048), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=41, family=2, type=1, proto=6, laddr=('192.168.0.2', 44064), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=43, family=2, type=1, proto=6, laddr=('192.168.0.2', 44070), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=45, family=2, type=1, proto=6, laddr=('192.168.0.2', 44072), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=48, family=2, type=1, proto=6, laddr=('192.168.0.2', 53380), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=26, family=2, type=1, proto=6, laddr=('192.168.0.2', 46276), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=28, family=2, type=1, proto=6, laddr=('192.168.0.2', 46284), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=30, family=2, type=1, proto=6, laddr=('192.168.0.2', 46294), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=32, family=2, type=1, proto=6, laddr=('192.168.0.2', 46300), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=34, family=2, type=1, proto=6, laddr=('192.168.0.2', 46302), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=36, family=2, type=1, proto=6, laddr=('192.168.0.2', 46314), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=38, family=2, type=1, proto=6, laddr=('192.168.0.2', 46320), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=40, family=2, type=1, proto=6, laddr=('192.168.0.2', 46326), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=42, family=2, type=1, proto=6, laddr=('192.168.0.2', 46340), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=44, family=2, type=1, proto=6, laddr=('192.168.0.2', 46352), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=46, family=2, type=1, proto=6, laddr=('192.168.0.2', 46364), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=47, family=2, type=1, proto=6, laddr=('192.168.0.2', 33550), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=49, family=2, type=1, proto=6, laddr=('192.168.0.2', 33552), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=51, family=2, type=1, proto=6, laddr=('192.168.0.2', 33566), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=53, family=2, type=1, proto=6, laddr=('192.168.0.2', 33578), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=55, family=2, type=1, proto=6, laddr=('192.168.0.2', 33586), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=57, family=2, type=1, proto=6, laddr=('192.168.0.2', 33592), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=59, family=2, type=1, proto=6, laddr=('192.168.0.2', 33600), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=61, family=2, type=1, proto=6, laddr=('192.168.0.2', 33604), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=50, family=2, type=1, proto=6, laddr=('192.168.0.2', 53384), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=52, family=2, type=1, proto=6, laddr=('192.168.0.2', 53390), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=54, family=2, type=1, proto=6, laddr=('192.168.0.2', 53398), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=56, family=2, type=1, proto=6, laddr=('192.168.0.2', 53414), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=58, family=2, type=1, proto=6, laddr=('192.168.0.2', 53420), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=60, family=2, type=1, proto=6, laddr=('192.168.0.2', 53434), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=62, family=2, type=1, proto=6, laddr=('192.168.0.2', 53448), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=70, family=2, type=1, proto=6, laddr=('192.168.0.2', 49322), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=76, family=2, type=1, proto=6, laddr=('192.168.0.2', 49358), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=78, family=2, type=1, proto=6, laddr=('192.168.0.2', 56752), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=88, family=2, type=1, proto=6, laddr=('192.168.0.2', 56792), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=94, family=2, type=1, proto=6, laddr=('192.168.0.2', 56812), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=98, family=2, type=1, proto=6, laddr=('192.168.0.2', 38830), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=96, family=2, type=1, proto=6, laddr=('192.168.0.2', 34834), raddr=('104.18.38.10', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/__init__.py:411: ResourceWarning: unclosed <ssl.SSLSocket fd=95, family=2, type=1, proto=6, laddr=('192.168.0.2', 38836), raddr=('172.64.149.246', 443)>
+  for attr in list(modified_attrs.keys()):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/httpcore/_trace.py:49: ResourceWarning: unclosed <ssl.SSLSocket fd=6, family=2, type=1, proto=6, laddr=('192.168.0.2', 46450), raddr=('104.18.38.10', 443)>
+  def __enter__(self) -> Trace:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/httpcore/_synchronization.py:241: ResourceWarning: unclosed <ssl.SSLSocket fd=7, family=2, type=1, proto=6, laddr=('192.168.0.2', 46454), raddr=('104.18.38.10', 443)>
+  self._lock = threading.Lock()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/httpcore/_synchronization.py:241: ResourceWarning: unclosed <ssl.SSLSocket fd=8, family=2, type=1, proto=6, laddr=('192.168.0.2', 47722), raddr=('172.64.149.246', 443)>
+  self._lock = threading.Lock()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/httpcore/_synchronization.py:241: ResourceWarning: unclosed <ssl.SSLSocket fd=9, family=2, type=1, proto=6, laddr=('192.168.0.2', 46470), raddr=('104.18.38.10', 443)>
+  self._lock = threading.Lock()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/element.py:1558: ResourceWarning: unclosed <ssl.SSLSocket fd=8, family=2, type=1, proto=6, laddr=('192.168.0.2', 46472), raddr=('104.18.38.10', 443)>
+  u = str.__new__(cls, value)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/element.py:1558: ResourceWarning: unclosed <ssl.SSLSocket fd=13, family=2, type=1, proto=6, laddr=('192.168.0.2', 47742), raddr=('172.64.149.246', 443)>
+  u = str.__new__(cls, value)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/element.py:1558: ResourceWarning: unclosed <ssl.SSLSocket fd=14, family=2, type=1, proto=6, laddr=('192.168.0.2', 46486), raddr=('104.18.38.10', 443)>
+  u = str.__new__(cls, value)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/_htmlparser.py:180: ResourceWarning: unclosed <ssl.SSLSocket fd=6, family=2, type=1, proto=6, laddr=('192.168.0.2', 47712), raddr=('172.64.149.246', 443)>
+  attr_dict[key] = value
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/_htmlparser.py:180: ResourceWarning: unclosed <ssl.SSLSocket fd=7, family=2, type=1, proto=6, laddr=('192.168.0.2', 47732), raddr=('172.64.149.246', 443)>
+  attr_dict[key] = value
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/bs4/builder/_htmlparser.py:180: ResourceWarning: unclosed <ssl.SSLSocket fd=8, family=2, type=1, proto=6, laddr=('192.168.0.2', 47756), raddr=('172.64.149.246', 443)>
+  attr_dict[key] = value
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/html/parser.py:425: ResourceWarning: unclosed <ssl.SSLSocket fd=6, family=2, type=1, proto=6, laddr=('192.168.0.2', 46490), raddr=('104.18.38.10', 443)>
+  m = attrfind_tolerant.match(rawdata, k)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/httpcore/_models.py:162: ResourceWarning: unclosed <ssl.SSLSocket fd=6, family=2, type=1, proto=6, laddr=('192.168.0.2', 47770), raddr=('172.64.149.246', 443)>
+  def __init__(self, scheme: bytes, host: bytes, port: int) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/httpcore/_models.py:162: ResourceWarning: unclosed <ssl.SSLSocket fd=7, family=2, type=1, proto=6, laddr=('192.168.0.2', 46506), raddr=('104.18.38.10', 443)>
+  def __init__(self, scheme: bytes, host: bytes, port: int) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/typing.py:395: ResourceWarning: unclosed <ssl.SSLSocket fd=7, family=2, type=1, proto=6, laddr=('192.168.0.2', 46516), raddr=('104.18.38.10', 443)>
+  return _caches[func](*args, **kwds)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+/home/jules/.pyenv/versions/3.12.13/lib/python3.12/site-packages/supabase/_sync/client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+  return SyncPostgrestClient(
+Failed: Tulsi
+Failed: Neem
+Failed: Aloe Vera
+Failed: Ashwagandha
+Failed: Turmeric
+Failed: Giloy
+Failed: Amla
+Failed: Ginger
+Failed: Garlic
+Failed: Mint
+Failed: Brahmi
+Failed: Shatavari
+Failed: Arjuna
+Failed: Moringa
+Failed: Lemongrass
+Failed: Bael
+Failed: Kalmegh
+Failed: Sarpagandha
+Failed: Safed Musli
+Failed: Punarnava
+Failed: Gudmar
+Failed: Haritaki
+Failed: Bibhitaki
+Failed: Mulethi
+Failed: Fenugreek
+Failed: Black Pepper
+Failed: Cinnamon
+Failed: Clove
+Failed: Cardamom
+Failed: Gotu Kola
+Failed: Stevia
+Failed: Chamomile
+Failed: Lavender
+Failed: Echinacea
+Failed: Ginseng
+Failed: Valerian
+Failed: Milk Thistle
+Failed: Dandelion
+Failed: Rosemary
+Failed: Sage
+Failed: Thyme
+Failed: Noni
+Failed: Boswellia
+Failed: Bhringraj
+Failed: Kutki
+Failed: Gokshura
+Failed: Jatamansi
+Failed: Vacha
+Failed: Manjistha
+Failed: Shankhpushpi
+Failed: Curry Leaf
+Failed: Coriander
+Failed: Fennel
+Failed: Cumin
+Failed: Ajwain
+Failed: Mustard
+Failed: Sesame
+Failed: Flax
+Failed: Isabgol
+Failed: Hibiscus
+Failed: Henna
+Failed: Jasmine
+Failed: Rose
+Failed: Marigold
+Success: Lotus
+Success: Saffron
+Success: Tamarind
+Failed: Drumstick Tree
+Failed: Jamun
+Success: Kokum
+Success: Indian Gooseberry
+Success: Holy Basil
+Success: Sweet Basil
+Success: Oregano
+Failed: Bay Leaf
+Success: Nutmeg
+Success: Mace
+Success: Star Anise
+Success: Allspice
+Success: Anise
+Success: Catnip
+Success: Lemon Balm
+Success: Yarrow
+Success: Comfrey
+Success: Plantain Herb
+Success: Elderberry
+Success: Elderflower
+Success: Horsetail
+Success: Mullein
+\n--- Test Results ---
+Total Successes: 22/89
+Total Failures: 67/89
+Failures: ['Tulsi', 'Neem', 'Aloe Vera', 'Ashwagandha', 'Turmeric', 'Giloy', 'Amla', 'Ginger', 'Garlic', 'Mint', 'Brahmi', 'Shatavari', 'Arjuna', 'Moringa', 'Lemongrass', 'Bael', 'Kalmegh', 'Sarpagandha', 'Safed Musli', 'Punarnava', 'Gudmar', 'Haritaki', 'Bibhitaki', 'Mulethi', 'Fenugreek', 'Black Pepper', 'Cinnamon', 'Clove', 'Cardamom', 'Gotu Kola', 'Stevia', 'Chamomile', 'Lavender', 'Echinacea', 'Ginseng', 'Valerian', 'Milk Thistle', 'Dandelion', 'Rosemary', 'Sage', 'Thyme', 'Noni', 'Boswellia', 'Bhringraj', 'Kutki', 'Gokshura', 'Jatamansi', 'Vacha', 'Manjistha', 'Shankhpushpi', 'Curry Leaf', 'Coriander', 'Fennel', 'Cumin', 'Ajwain', 'Mustard', 'Sesame', 'Flax', 'Isabgol', 'Hibiscus', 'Henna', 'Jasmine', 'Rose', 'Marigold', 'Drumstick Tree', 'Jamun', 'Bay Leaf']
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=63, family=2, type=1, proto=6, laddr=('192.168.0.2', 49826), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=65, family=2, type=1, proto=6, laddr=('192.168.0.2', 49832), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=67, family=2, type=1, proto=6, laddr=('192.168.0.2', 49844), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=69, family=2, type=1, proto=6, laddr=('192.168.0.2', 49854), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=64, family=2, type=1, proto=6, laddr=('192.168.0.2', 49306), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=66, family=2, type=1, proto=6, laddr=('192.168.0.2', 49308), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=68, family=2, type=1, proto=6, laddr=('192.168.0.2', 49312), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=71, family=2, type=1, proto=6, laddr=('192.168.0.2', 49860), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=73, family=2, type=1, proto=6, laddr=('192.168.0.2', 49872), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=75, family=2, type=1, proto=6, laddr=('192.168.0.2', 49884), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=77, family=2, type=1, proto=6, laddr=('192.168.0.2', 49892), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=79, family=2, type=1, proto=6, laddr=('192.168.0.2', 53240), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=81, family=2, type=1, proto=6, laddr=('192.168.0.2', 53242), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=83, family=2, type=1, proto=6, laddr=('192.168.0.2', 53250), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=85, family=2, type=1, proto=6, laddr=('192.168.0.2', 53254), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=87, family=2, type=1, proto=6, laddr=('192.168.0.2', 53268), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=89, family=2, type=1, proto=6, laddr=('192.168.0.2', 53276), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=91, family=2, type=1, proto=6, laddr=('192.168.0.2', 53286), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=93, family=2, type=1, proto=6, laddr=('192.168.0.2', 53292), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=74, family=2, type=1, proto=6, laddr=('192.168.0.2', 49354), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=80, family=2, type=1, proto=6, laddr=('192.168.0.2', 56766), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=82, family=2, type=1, proto=6, laddr=('192.168.0.2', 56774), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=84, family=2, type=1, proto=6, laddr=('192.168.0.2', 56776), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=86, family=2, type=1, proto=6, laddr=('192.168.0.2', 56780), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=90, family=2, type=1, proto=6, laddr=('192.168.0.2', 56802), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=92, family=2, type=1, proto=6, laddr=('192.168.0.2', 56806), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=72, family=2, type=1, proto=6, laddr=('192.168.0.2', 49338), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=7, family=2, type=1, proto=6, laddr=('192.168.0.2', 47776), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=8, family=2, type=1, proto=6, laddr=('192.168.0.2', 46518), raddr=('104.18.38.10', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=6, family=2, type=1, proto=6, laddr=('192.168.0.2', 47774), raddr=('172.64.149.246', 443)>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
