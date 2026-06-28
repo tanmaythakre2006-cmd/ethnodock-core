@@ -25,11 +25,18 @@ def _is_valid_synonym(synonym: str) -> bool:
     banned_words = [
         'powder', 'rice', 'extract', 'juice', 'pill', 'capsule', 'drink', 'recipe',
         'plant', 'common', 'medicinal', 'brand', 'product', 'fruit', 'leaf', 'root',
-        'seed', 'oil', 'tea', 'supplement', 'chikara', 'green', 'red'
+        'seed', 'oil', 'tea', 'supplement', 'chikara', 'green', 'red',
+        'peel', 'rind', 'bark', 'stem', 'flower'
     ]
 
     for word in banned_words:
         if re.search(rf'\b{word}\b', synonym_lower):
+            return False
+
+    # Chinese anatomical exclusions
+    chinese_banned_substrings = ['根叶', '子仁', '子壳', '西瓜皮', '西瓜子', '西瓜霜']
+    for substr in chinese_banned_substrings:
+        if substr in synonym:
             return False
 
     return True
@@ -58,14 +65,23 @@ async def get_synonyms(herb_name: str) -> list[str]:
                 try:
                     data = json.loads(resp_html)
                     if data.get("search"):
-                        entity_id = data["search"][0]["id"]
-                        resolved_title = data["search"][0].get("label")
+                        for item in data["search"]:
+                            desc = item.get("description", "").lower()
+                            # 1. Corporate Disambiguation Overrule
+                            if any(corp in desc for corp in ["company", "inc.", "incorporated", "corp", "corporation"]):
+                                continue # Explicitly reject corporate entities
+
+                            if any(kw in desc for kw in ['plant', 'tree', 'herb', 'species', 'flower', 'shrub', 'fruit']):
+                                entity_id = item["id"]
+                                resolved_title = item.get("label")
+                                break
                 except json.JSONDecodeError as e:
                     logger.debug(f"JSON decode failed for Wikidata search: {e}")
 
             # 2. Option B: Wikipedia Search Fallback
             if not entity_id:
-                wiki_search_url = f"https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={encoded_herb}&utf8=&format=json"
+                botanical_context = urllib.parse.quote(f"{herb_name} plant OR tree OR herb OR species")
+                wiki_search_url = f"https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={botanical_context}&utf8=&format=json"
                 wiki_resp_html = await fetch_via_proxy(client, wiki_search_url)
                 if wiki_resp_html:
                     try:
@@ -140,7 +156,7 @@ async def get_synonyms(herb_name: str) -> list[str]:
                 # Use Wikidata's entity to get the English Wikipedia title if available
                 wiki_title = en_wiki_title if en_wiki_title else herb_name
 
-                wiki_url = f"https://en.wikipedia.org/w/api.php?action=query&titles={wiki_title}&prop=langlinks&redirects=1&lllimit=500&format=json"
+                wiki_url = f"https://en.wikipedia.org/w/api.php?action=query&titles={wiki_title}&prop=langlinks&redirects=1&lllimit=max&format=json"
                 wiki_resp_html = await fetch_via_proxy(client, wiki_url)
 
                 if wiki_resp_html:
@@ -149,12 +165,9 @@ async def get_synonyms(herb_name: str) -> list[str]:
                     for page_id, page_info in pages.items():
                         langlinks = page_info.get("langlinks", [])
                         for langlink in langlinks:
-                            lang = langlink.get("lang")
-                            # We want hi, sa, zh
-                            if lang in ["hi", "sa", "zh"]:
-                                val = langlink.get("*")
-                                if val:
-                                    synonyms.append(val)
+                            val = langlink.get("*")
+                            if val:
+                                synonyms.append(val)
             except Exception as e:
                 logger.warning(f"Wikipedia langlinks extraction failed for {herb_name}: {e}")
 
@@ -167,8 +180,14 @@ async def get_synonyms(herb_name: str) -> list[str]:
     for s in synonyms:
         if not s:
             continue
+
+        # Replace botanical cross symbols with space and collapse spaces
+        s = s.replace('×', ' ')
+        s = re.sub(r'\bX\b', ' ', s, flags=re.IGNORECASE)
+        s = re.sub(r'\s+', ' ', s)
+
         # Clean FIRST before validation and deduplication
-        s_cleaned = s.strip().title()
+        s_cleaned = re.sub(r'^\s+|\s+$', '', s, flags=re.UNICODE).title()
         if _is_valid_synonym(s_cleaned):
             s_lower = s_cleaned.lower()
             if s_lower not in seen:
