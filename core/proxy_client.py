@@ -10,7 +10,7 @@ async def fetch_via_proxy(client: httpx.AsyncClient, target_url: str) -> str:
     Fetches the content of a target URL via the proxy worker asynchronously.
     """
     try:
-        response = await client.get(PROXY_URL, params={"url": target_url}, timeout=15.0)
+        response = await client.get(PROXY_URL, params={"url": target_url}, timeout=15.0, follow_redirects=True)
         if response.status_code == 200:
             return response.text
         else:

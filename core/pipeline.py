@@ -2,6 +2,7 @@ import logging
 from typing import Dict, Any, List, Tuple
 
 from core.radar import execute_radar
+from core.synonym_engine import get_synonyms
 from core.council_orchestrator import orchestrate_council
 from core.triangulator import LogicTriangulator
 from core.cognitive_rag import SandboxValidator
@@ -10,7 +11,7 @@ from database.supabase_client import get_supabase_client
 
 logger = logging.getLogger(__name__)
 
-async def run_autonomous_extraction(herb_name: str, api_key: str = "", max_urls: int = 5) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+async def run_autonomous_extraction(herb_name: str, api_key: str = "", max_urls: int = 150) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     """
     Hybrid Sovereign Pipeline (Dual-Stream).
     Returns (master_matrix, experimental_matrix)
@@ -37,15 +38,19 @@ async def run_autonomous_extraction(herb_name: str, api_key: str = "", max_urls:
         except Exception as e:
             logger.warning(f"Supabase pre-flight failed: {e}")
 
-    # --- Step 1: Radar ---
-    urls = await execute_radar(herb_name, max_results=max_urls)
+    # --- Step 1: Generalized Synonym Engine ---
+    synonyms = await get_synonyms(herb_name)
+    logger.info(f"Synonym engine resolved: {synonyms}")
+
+    # --- Step 2: Radar Swarm ---
+    urls = await execute_radar(synonyms, max_results=max_urls)
     if not urls:
         return master_matrix, {}
 
-    # --- Step 2: Orchestrate Council ---
+    # --- Step 3: Orchestrate Council (with Deduplication) ---
     council_results = await orchestrate_council(urls, herb_name)
 
-    # --- Step 3: Data Router ---
+    # --- Step 4: Data Router ---
     stream_a_matrices = []
     stream_b_chunks = []
 
