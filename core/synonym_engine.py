@@ -10,29 +10,22 @@ def _is_valid_synonym(synonym: str) -> bool:
     Implements a strict exclusion filter to drop nonsense, commercial products,
     recipes, physical states, and codes.
     """
-    synonym = synonym.strip()
     if not synonym:
         return False
 
-    synonym_lower = synonym.lower()
+    synonym = synonym.strip().title()
 
     # DROP any string containing numbers
     if re.search(r'\d', synonym):
         return False
 
-    # DROP any string containing all-caps alphanumeric codes/words that look like codes
-    # Check if string has any uppercase word with numbers (already caught by \d)
-    # Check if entirely uppercase and looks like a code (e.g. CAPA)
-    # Just checking for all uppercase words without spaces might be too aggressive for acronyms,
-    # but the \d check handles "CAPA23". Let's also block words that are pure caps and > 3 letters
-    # unless it's a known valid acronym (but herbs rarely are).
-    # We will just rely on \d for codes and specific banned words.
+    synonym_lower = synonym.lower()
 
     # Banned words
     banned_words = [
         'powder', 'rice', 'extract', 'juice', 'pill', 'capsule', 'drink', 'recipe',
         'plant', 'common', 'medicinal', 'brand', 'product', 'fruit', 'leaf', 'root',
-        'seed', 'oil', 'tea', 'supplement', 'chikara'
+        'seed', 'oil', 'tea', 'supplement', 'chikara', 'green', 'red'
     ]
 
     for word in banned_words:
@@ -105,6 +98,32 @@ async def get_synonyms(herb_name: str) -> list[str]:
                     if val and len(val.split()) <= 4:
                         synonyms.append(val)
 
+            # 4. Wikipedia Interlanguage Links
+            try:
+                # Use Wikidata's entity to get the English Wikipedia title
+                en_wiki_title = entity.get("sitelinks", {}).get("enwiki", {}).get("title")
+
+                # If no enwiki sitelink, fallback to searching the herb_name directly
+                wiki_title = en_wiki_title if en_wiki_title else herb_name
+
+                wiki_url = f"https://en.wikipedia.org/w/api.php?action=query&titles={wiki_title}&prop=langlinks&lllimit=500&format=json"
+                wiki_resp_html = await fetch_via_proxy(client, wiki_url)
+
+                if wiki_resp_html:
+                    wiki_data = json.loads(wiki_resp_html)
+                    pages = wiki_data.get("query", {}).get("pages", {})
+                    for page_id, page_info in pages.items():
+                        langlinks = page_info.get("langlinks", [])
+                        for langlink in langlinks:
+                            lang = langlink.get("lang")
+                            # We want hi, sa, zh
+                            if lang in ["hi", "sa", "zh"]:
+                                val = langlink.get("*")
+                                if val:
+                                    synonyms.append(val)
+            except Exception as e:
+                logger.warning(f"Wikipedia langlinks extraction failed for {herb_name}: {e}")
+
     except Exception as e:
         logger.warning(f"Synonym extraction failed for {herb_name}: {e}")
 
@@ -112,9 +131,11 @@ async def get_synonyms(herb_name: str) -> list[str]:
     filtered_synonyms = []
     seen = set()
     for s in synonyms:
-        s_lower = s.lower()
-        if s_lower not in seen and _is_valid_synonym(s):
-            filtered_synonyms.append(s)
-            seen.add(s_lower)
+        if _is_valid_synonym(s):
+            s_cleaned = s.strip().title()
+            s_lower = s_cleaned.lower()
+            if s_lower not in seen:
+                filtered_synonyms.append(s_cleaned)
+                seen.add(s_lower)
 
-    return filtered_synonyms[:8] # Cap at 8 synonyms to avoid explosion
+    return list(filtered_synonyms)[:8] # Cap at 8 synonyms to avoid explosion
