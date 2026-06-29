@@ -24,10 +24,11 @@ def _is_valid_synonym(synonym: str) -> bool:
         'plant', 'common', 'medicinal', 'brand', 'product', 'fruit', 'leaf', 'root',
         'seed', 'oil', 'tea', 'supplement', 'chikara', 'green', 'red',
         'peel', 'core', 'bark', 'chai', 'latte', 'company', 'corp', 'inc', 'incorporated',
-        'emperor', 'great', 'maurya'
+        'emperor', 'great', 'maurya', 'dream', 'band', 'music', 'film', 'movie', 'song',
+        'wood', 'stem', 'mangal', 'branch', 'flower', 'petal'
     ]
 
-    banned_chars = ['皮', '子', '仁', '根', '叶', '壳', '霜']
+    banned_chars = ['皮', '子', '仁', '根', '叶', '壳', '霜', '果', '肉', '核', '枝', '茎', '粉', '膏', '汁', '提取物']
 
     for word in banned_words:
         if re.search(rf'\b{re.escape(word)}\b', synonym_lower):
@@ -117,15 +118,13 @@ async def get_synonyms(herb_name: str) -> list[str]:
                                         val = c.get("mainsnak", {}).get("datavalue", {}).get("value", {}).get("id")
                                         if val: p31s.append(val)
 
-                                # Reject Human (Q5), Business/Enterprise (Q4830453)
-                                # And Geographical features (Q2221906, Q515, Q82794, Q6256, etc.)
-                                # Using a more robust check: if any of the forbidden classes are present
-                                forbidden = {"Q5", "Q4830453", "Q891723", "Q167037", "Q18388277", "Q6881511", "Q3409032", "Q111048186", "Q482994", "Q431289"}
-                                if any(p in forbidden for p in p31s):
+                                # Strict Ontological Filtering:
+                                # We must ensure the item is a Taxon (Q16521).
+                                # If Q16521 is not in p31s, discard it.
+                                if "Q16521" not in p31s:
                                     continue
 
-                                # If it's a valid Taxon (Q16521) or Plant (Q756) or just not forbidden, we take it.
-                                # To be safe we just accept the first one that isn't forbidden
+                                # If it's a valid Taxon (Q16521), we take it.
                                 entity_id = q_id
                                 resolved_title = item.get("label")
                                 break

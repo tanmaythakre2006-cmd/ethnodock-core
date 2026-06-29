@@ -7,3 +7,8 @@ fastapi
 uvicorn
 streamlit
 httpx
+
+googlesearch-python
+scrapy
+playwright
+selenium
