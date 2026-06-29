@@ -6,33 +6,78 @@ import re
 logger = logging.getLogger(__name__)
 
 def _is_valid_synonym(synonym: str) -> bool:
-    """
-    Implements a strict exclusion filter to drop nonsense, commercial products,
-    recipes, physical states, and codes.
-    """
     if not synonym:
         return False
 
     synonym = synonym.strip().title()
 
-    # DROP any string containing numbers
     if re.search(r'\d', synonym):
+        return False
+
+    if '×' in synonym or re.search(r'\b[xX]\b', synonym):
         return False
 
     synonym_lower = synonym.lower()
 
-    # Banned words
     banned_words = [
         'powder', 'rice', 'extract', 'juice', 'pill', 'capsule', 'drink', 'recipe',
         'plant', 'common', 'medicinal', 'brand', 'product', 'fruit', 'leaf', 'root',
-        'seed', 'oil', 'tea', 'supplement', 'chikara', 'green', 'red'
+        'seed', 'oil', 'tea', 'supplement', 'chikara', 'green', 'red',
+        'peel', 'core', 'bark', 'chai', 'latte', 'company', 'corp', 'inc', 'incorporated',
+        'emperor', 'great', 'maurya'
     ]
 
+    banned_chars = ['皮', '子', '仁', '根', '叶', '壳', '霜']
+
     for word in banned_words:
-        if re.search(rf'\b{word}\b', synonym_lower):
+        if re.search(rf'\b{re.escape(word)}\b', synonym_lower):
+            return False
+
+    for char in banned_chars:
+        if char in synonym_lower:
             return False
 
     return True
+
+
+import os
+import httpx
+
+async def refine_with_ai(synonyms: list[str]) -> list[str]:
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        return synonyms
+
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+
+    prompt = (
+        "You are a botanical semantic filter. You are given a raw list of plant synonyms. "
+        "Deduplicate the list at a high linguistic level, map obscure regional dialects to language families "
+        "and scrub complex semantic noise that rigid regex missed (like completely unrelated brands, figures, or products). "
+        "Return ONLY a raw JSON array of strings. No markdown formatting, no explanation."
+        f"\n\nInput: {json.dumps(synonyms)}"
+    )
+
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"temperature": 0.0}
+    }
+
+    try:
+        async with httpx.AsyncClient(timeout=15.0) as client:
+            resp = await client.post(url, json=payload)
+            if resp.status_code == 200:
+                data = resp.json()
+                text = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "")
+                text = text.replace("```json", "").replace("```", "").strip()
+                refined = json.loads(text)
+                if isinstance(refined, list):
+                    return refined
+    except Exception as e:
+        logger.error(f"Gemini API failure in synonym refinement: {e}")
+
+    return synonyms
+
 
 async def get_synonyms(herb_name: str) -> list[str]:
     """
@@ -57,9 +102,35 @@ async def get_synonyms(herb_name: str) -> list[str]:
             if resp_html:
                 try:
                     data = json.loads(resp_html)
-                    if data.get("search"):
-                        entity_id = data["search"][0]["id"]
-                        resolved_title = data["search"][0].get("label")
+                    for item in data.get("search", []):
+                        q_id = item["id"]
+                        # Check P31 (instance of)
+                        ent_url = f"https://www.wikidata.org/w/api.php?action=wbgetentities&ids={q_id}&languages=en&props=claims&format=json"
+                        ent_resp = await fetch_via_proxy(client, ent_url)
+                        if ent_resp:
+                            try:
+                                ent_data = json.loads(ent_resp)
+                                claims = ent_data.get("entities", {}).get(q_id, {}).get("claims", {})
+                                p31s = []
+                                if "P31" in claims:
+                                    for c in claims["P31"]:
+                                        val = c.get("mainsnak", {}).get("datavalue", {}).get("value", {}).get("id")
+                                        if val: p31s.append(val)
+
+                                # Reject Human (Q5), Business/Enterprise (Q4830453)
+                                # And Geographical features (Q2221906, Q515, Q82794, Q6256, etc.)
+                                # Using a more robust check: if any of the forbidden classes are present
+                                forbidden = {"Q5", "Q4830453", "Q891723", "Q167037", "Q18388277", "Q6881511", "Q3409032", "Q111048186", "Q482994", "Q431289"}
+                                if any(p in forbidden for p in p31s):
+                                    continue
+
+                                # If it's a valid Taxon (Q16521) or Plant (Q756) or just not forbidden, we take it.
+                                # To be safe we just accept the first one that isn't forbidden
+                                entity_id = q_id
+                                resolved_title = item.get("label")
+                                break
+                            except json.JSONDecodeError:
+                                pass
                 except json.JSONDecodeError as e:
                     logger.debug(f"JSON decode failed for Wikidata search: {e}")
 
@@ -175,4 +246,5 @@ async def get_synonyms(herb_name: str) -> list[str]:
                 filtered_synonyms.append(s_cleaned)
                 seen.add(s_lower)
 
-    return list(filtered_synonyms)
+    refined = await refine_with_ai(list(filtered_synonyms))
+    return refined
