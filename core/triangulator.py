@@ -1,4 +1,4 @@
-from core.critic import PHARMA_TERMS, HISTORY_TERMS
+from core.critic import PHARMA_TERMS, HISTORY_TERMS, BOOK_MYTHOLOGY_MAP
 import re
 import logging
 from typing import Dict, Any, List
@@ -65,7 +65,10 @@ class LogicTriangulator:
 
         for term in HISTORY_TERMS:
             if term in text_lower:
-                if term in ["ayurveda", "ayurvedic"]:
+                if term in BOOK_MYTHOLOGY_MAP:
+                    text_name = term.title()
+                    mythology = BOOK_MYTHOLOGY_MAP[term]
+                elif term in ["ayurveda", "ayurvedic"]:
                     mythology = "Ayurveda"
                 elif term in ["tcm", "chinese medicine"]:
                     mythology = "TCM"
@@ -86,7 +89,8 @@ class LogicTriangulator:
                 elif term in ["norse healing"]:
                     mythology = "Norse healing traditions"
                 elif term in ["folk", "traditional"]:
-                    mythology = "Traditional/Folk"
+                    if mythology == "Unknown_Mythology":
+                        mythology = "Traditional/Folk"
 
         return {
             "mythology": mythology,

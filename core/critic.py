@@ -13,6 +13,62 @@ PHARMA_TERMS = {
     "inhibitor", "metabolism", "toxicity"
 }
 
+BOOK_MYTHOLOGY_MAP = {
+    "charaka samhita": "Ayurveda",
+    "sushruta samhita": "Ayurveda",
+    "ashtanga hridaya": "Ayurveda",
+    "ashtanga sangraha": "Ayurveda",
+    "bhela samhita": "Ayurveda",
+    "kashyapa samhita": "Ayurveda",
+    "bhavaprakasha": "Ayurveda",
+    "madhava nidana": "Ayurveda",
+    "sharangadhara samhita": "Ayurveda",
+    "rasaratna samuccaya": "Ayurveda",
+    "huangdi neijing": "TCM",
+    "shennong bencao jing": "TCM",
+    "shanghan lun": "TCM",
+    "jingui yaolue": "TCM",
+    "bencao gangmu": "TCM",
+    "zhenjiu jiayi jing": "TCM",
+    "ebers papyrus": "Ancient Egyptian medicine",
+    "edwin smith papyrus": "Ancient Egyptian medicine",
+    "kahun gynecological papyrus": "Ancient Egyptian medicine",
+    "hearst papyrus": "Ancient Egyptian medicine",
+    "london medical papyrus": "Ancient Egyptian medicine",
+    "berlin papyrus": "Ancient Egyptian medicine",
+    "hippocratic corpus": "Ancient Greek medicine",
+    "on the nature of man": "Ancient Greek medicine",
+    "on fractures": "Ancient Greek medicine",
+    "on joints": "Ancient Greek medicine",
+    "de materia medica": "Ancient Greek medicine",
+    "on the usefulness of the parts": "Ancient Greek medicine",
+    "diagnostic handbook": "Mesopotamian medicine",
+    "assur medical tablets": "Mesopotamian medicine",
+    "nineveh medical tablets": "Mesopotamian medicine",
+    "babylonian therapeutic texts": "Mesopotamian medicine",
+    "uruanna": "Mesopotamian medicine",
+    "cuneiform healing tablets": "Mesopotamian medicine",
+    "the canon of medicine": "Persian medicine",
+    "al-hawi": "Persian medicine",
+    "zakhireye khwarazmshahi": "Persian medicine",
+    "kitab al-mansuri": "Persian medicine",
+    "badianus manuscript": "Mesoamerican medicine",
+    "florentine codex": "Mesoamerican medicine",
+    "libellus de medicinalibus indorum herbis": "Mesoamerican medicine",
+    "maya medicinal codices": "Mesoamerican medicine",
+    "al-tasrif": "Arabic and Islamic medicine",
+    "kitab al-maliki": "Arabic and Islamic medicine",
+    "kitab al-saydalah": "Arabic and Islamic medicine",
+    "ifá medicinal verses": "Yoruba traditional medicine",
+    "yoruba herbal corpus": "Yoruba traditional medicine",
+    "colonial ethnobotanical records": "Traditional/Folk",
+    "lacnunga": "Norse healing traditions",
+    "bald's leechbook": "Norse healing traditions",
+    "poetic edda": "Norse healing traditions",
+    "prose edda": "Norse healing traditions",
+    "icelandic healing manuscripts": "Norse healing traditions"
+}
+
 HISTORY_TERMS = {
     "ancient", "mythology", "cultural", "traditional", "provenance", "ayurveda", "tcm",
     "chinese medicine", "folk", "historical", "indigenous", "shamanic", "ritual", "tribe",
@@ -21,6 +77,9 @@ HISTORY_TERMS = {
     "mesoamerican medicine", "arabic medicine", "islamic medicine", "yoruba traditional medicine",
     "yoruba medicine", "norse healing"
 }
+
+for book in BOOK_MYTHOLOGY_MAP.keys():
+    HISTORY_TERMS.add(book)
 
 NOISE_TERMS = {
     "buy now", "add to cart", "cookie policy", "privacy policy", "terms of service",
