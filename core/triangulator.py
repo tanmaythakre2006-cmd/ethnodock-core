@@ -62,31 +62,40 @@ class LogicTriangulator:
         mythology = "Unknown_Mythology"
         text_name = "Extracted_Source"
 
+        from core.critic import BOOK_MYTHOLOGY_MAP
+        found_book = False
+        for book_name, mapped_mythology in BOOK_MYTHOLOGY_MAP.items():
+            if book_name.lower() in text_lower:
+                text_name = book_name
+                mythology = mapped_mythology
+                found_book = True
+                break # We found a specific text match, use it.
 
-        for term in HISTORY_TERMS:
-            if term in text_lower:
-                if term in ["ayurveda", "ayurvedic"]:
-                    mythology = "Ayurveda"
-                elif term in ["tcm", "chinese medicine"]:
-                    mythology = "TCM"
-                elif term in ["egyptian medicine"]:
-                    mythology = "Ancient Egyptian medicine"
-                elif term in ["greek medicine"]:
-                    mythology = "Ancient Greek medicine"
-                elif term in ["mesopotamian medicine"]:
-                    mythology = "Mesopotamian medicine"
-                elif term in ["persian medicine"]:
-                    mythology = "Persian medicine"
-                elif term in ["mesoamerican medicine"]:
-                    mythology = "Mesoamerican medicine"
-                elif term in ["arabic medicine", "islamic medicine"]:
-                    mythology = "Arabic and Islamic medicine"
-                elif term in ["yoruba traditional medicine", "yoruba medicine"]:
-                    mythology = "Yoruba traditional medicine"
-                elif term in ["norse healing"]:
-                    mythology = "Norse healing traditions"
-                elif term in ["folk", "traditional"]:
-                    mythology = "Traditional/Folk"
+        if not found_book:
+            for term in HISTORY_TERMS:
+                if term in text_lower:
+                    if term in ["ayurveda", "ayurvedic"]:
+                        mythology = "Ayurveda"
+                    elif term in ["tcm", "chinese medicine"]:
+                        mythology = "TCM"
+                    elif term in ["egyptian medicine"]:
+                        mythology = "Ancient Egyptian medicine"
+                    elif term in ["greek medicine"]:
+                        mythology = "Ancient Greek medicine"
+                    elif term in ["mesopotamian medicine"]:
+                        mythology = "Mesopotamian medicine"
+                    elif term in ["persian medicine"]:
+                        mythology = "Persian medicine"
+                    elif term in ["mesoamerican medicine"]:
+                        mythology = "Mesoamerican medicine"
+                    elif term in ["arabic medicine", "islamic medicine"]:
+                        mythology = "Arabic and Islamic medicine"
+                    elif term in ["yoruba traditional medicine", "yoruba medicine"]:
+                        mythology = "Yoruba traditional medicine"
+                    elif term in ["norse healing"]:
+                        mythology = "Norse healing traditions"
+                    elif term in ["folk", "traditional"]:
+                        mythology = "Traditional/Folk"
 
         return {
             "mythology": mythology,

@@ -61,6 +61,13 @@ def synthesize_tier3_queries(synonym: str) -> List[str]:
         f"{synonym} mechanism of action filetype:pdf"
     ]
 
+
+def synthesize_tier4_queries(synonym: str) -> List[str]:
+    from core.critic import BOOK_MYTHOLOGY_MAP
+
+    books = list(BOOK_MYTHOLOGY_MAP.keys())
+    return [f"{synonym} {book}" for book in books]
+
 def normalize_url(url: str) -> str:
     try:
         parsed = urlparse(url)
@@ -124,11 +131,13 @@ async def execute_radar(synonyms: List[str], max_results: int = 1) -> List[Dict[
     tier1_queries = []
     tier2_queries = []
     tier3_queries = []
+    tier4_queries = []
 
     for syn in synonyms:
         tier1_queries.extend(synthesize_tier1_queries(syn))
         tier2_queries.extend(synthesize_tier2_queries(syn))
         tier3_queries.extend(synthesize_tier3_queries(syn))
+        tier4_queries.extend(synthesize_tier4_queries(syn))
 
     # Cross-Lingual Hunting
     try:
@@ -172,6 +181,12 @@ async def execute_radar(synonyms: List[str], max_results: int = 1) -> List[Dict[
         logger.info(f"Tier 2 yielded {len(all_results)} urls. Cascading to Tier 3 (Scientific PDFs)...")
         tier3_results = await run_tier(tier3_queries)
         all_results.extend(tier3_results)
+
+    if len(all_results) < max_results:
+        logger.info(f"Tier 3 yielded {len(all_results)} urls. Cascading to Tier 4 (Historical Medical Books)...")
+        tier4_results = await run_tier(tier4_queries)
+        all_results.extend(tier4_results)
+
 
     # Sort results favoring trusted first
     sorted_results = sorted(all_results, key=lambda x: (not x["is_trusted"], len(x["url"])))
