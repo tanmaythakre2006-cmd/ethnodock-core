@@ -69,6 +69,22 @@ class LogicTriangulator:
                     mythology = "Ayurveda"
                 elif term in ["tcm", "chinese medicine"]:
                     mythology = "TCM"
+                elif term in ["egyptian medicine"]:
+                    mythology = "Ancient Egyptian medicine"
+                elif term in ["greek medicine"]:
+                    mythology = "Ancient Greek medicine"
+                elif term in ["mesopotamian medicine"]:
+                    mythology = "Mesopotamian medicine"
+                elif term in ["persian medicine"]:
+                    mythology = "Persian medicine"
+                elif term in ["mesoamerican medicine"]:
+                    mythology = "Mesoamerican medicine"
+                elif term in ["arabic medicine", "islamic medicine"]:
+                    mythology = "Arabic and Islamic medicine"
+                elif term in ["yoruba traditional medicine", "yoruba medicine"]:
+                    mythology = "Yoruba traditional medicine"
+                elif term in ["norse healing"]:
+                    mythology = "Norse healing traditions"
                 elif term in ["folk", "traditional"]:
                     mythology = "Traditional/Folk"
 

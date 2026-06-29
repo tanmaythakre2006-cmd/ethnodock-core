@@ -16,7 +16,10 @@ PHARMA_TERMS = {
 HISTORY_TERMS = {
     "ancient", "mythology", "cultural", "traditional", "provenance", "ayurveda", "tcm",
     "chinese medicine", "folk", "historical", "indigenous", "shamanic", "ritual", "tribe",
-    "ethnobotany", "ethnobotanical", "heritage", "antiquity", "lore"
+    "ethnobotany", "ethnobotanical", "heritage", "antiquity", "lore",
+    "egyptian medicine", "greek medicine", "mesopotamian medicine", "persian medicine",
+    "mesoamerican medicine", "arabic medicine", "islamic medicine", "yoruba traditional medicine",
+    "yoruba medicine", "norse healing"
 }
 
 NOISE_TERMS = {
