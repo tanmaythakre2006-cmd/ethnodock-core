@@ -23,12 +23,15 @@ def _is_valid_synonym(synonym: str) -> bool:
         'powder', 'rice', 'extract', 'juice', 'pill', 'capsule', 'drink', 'recipe',
         'plant', 'common', 'medicinal', 'brand', 'product', 'fruit', 'leaf', 'root',
         'seed', 'oil', 'tea', 'supplement', 'chikara', 'green', 'red',
-        'peel', 'core', 'bark', 'chai', 'latte', 'company', 'corp', 'inc', 'incorporated',
+        'peel', 'rind', 'core', 'bark', 'chai', 'latte', 'company', 'corp', 'inc', 'incorporated',
         'emperor', 'great', 'maurya', 'dream', 'band', 'music', 'film', 'movie', 'song',
         'wood', 'stem', 'mangal', 'branch', 'flower', 'petal'
     ]
 
-    banned_chars = ['皮', '子', '仁', '根', '叶', '壳', '霜', '果', '肉', '核', '枝', '茎', '粉', '膏', '汁', '提取物']
+    banned_chars = ['皮', '子', '仁', '根', '叶', '壳', '霜', '果', '肉', '核', '枝', '茎', '粉', '膏', '汁', '提取物', '花', '木']
+
+    # Devanagari blocklist
+    banned_devanagari = ['बीज', 'छिलका', 'जड़', 'फूल', 'छाल']
 
     for word in banned_words:
         if re.search(rf'\b{re.escape(word)}\b', synonym_lower):
@@ -36,6 +39,10 @@ def _is_valid_synonym(synonym: str) -> bool:
 
     for char in banned_chars:
         if char in synonym_lower:
+            return False
+
+    for word in banned_devanagari:
+        if word in synonym_lower:
             return False
 
     return True
@@ -119,12 +126,17 @@ async def get_synonyms(herb_name: str) -> list[str]:
                                         if val: p31s.append(val)
 
                                 # Strict Ontological Filtering:
-                                # We must ensure the item is a Taxon (Q16521).
-                                # If Q16521 is not in p31s, discard it.
-                                if "Q16521" not in p31s:
+                                # Accept instances of Taxon (Q16521), Plant (Q756), or Food (Q28128).
+                                # HARD REJECTION for Human (Q5), Musical Group (Q215380), Business/Enterprise (Q4830453), or Media/Film (e.g., Q11424, Q83900).
+                                hard_rejections = {"Q5", "Q215380", "Q4830453", "Q11424", "Q83900", "Q2431196"}
+                                accepted_classes = {"Q16521", "Q756", "Q28128"}
+
+                                if any(p in hard_rejections for p in p31s):
                                     continue
 
-                                # If it's a valid Taxon (Q16521), we take it.
+                                if not any(p in accepted_classes for p in p31s):
+                                    continue
+
                                 entity_id = q_id
                                 resolved_title = item.get("label")
                                 break
@@ -140,20 +152,36 @@ async def get_synonyms(herb_name: str) -> list[str]:
                 if wiki_resp_html:
                     try:
                         wiki_data = json.loads(wiki_resp_html)
-                        if wiki_data.get("query", {}).get("search"):
-                            top_title = wiki_data["query"]["search"][0]["title"]
+                        for search_item in wiki_data.get("query", {}).get("search", []):
+                            top_title = search_item["title"]
                             resolved_title = top_title
 
                             # Get Wikidata ID for this Wikipedia title
-                            ent_url = f"https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles={urllib.parse.quote(top_title)}&languages=en&format=json"
+                            ent_url = f"https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles={urllib.parse.quote(top_title)}&languages=en&props=claims&format=json"
                             ent_html = await fetch_via_proxy(client, ent_url)
                             if ent_html:
                                 ent_d = json.loads(ent_html)
                                 entities = ent_d.get("entities", {})
-                                # The first key is the entity ID (if not -1)
                                 keys = list(entities.keys())
                                 if keys and keys[0] != "-1":
-                                    entity_id = keys[0]
+                                    cand_q_id = keys[0]
+                                    claims = entities.get(cand_q_id, {}).get("claims", {})
+                                    p31s = []
+                                    if "P31" in claims:
+                                        for c in claims["P31"]:
+                                            val = c.get("mainsnak", {}).get("datavalue", {}).get("value", {}).get("id")
+                                            if val: p31s.append(val)
+
+                                    hard_rejections = {"Q5", "Q215380", "Q4830453", "Q11424", "Q83900", "Q2431196"}
+                                    accepted_classes = {"Q16521", "Q756", "Q28128"}
+
+                                    if any(p in hard_rejections for p in p31s):
+                                        continue
+                                    if not any(p in accepted_classes for p in p31s):
+                                        continue
+
+                                    entity_id = cand_q_id
+                                    break
                     except json.JSONDecodeError as e:
                         logger.debug(f"JSON decode failed for Wikipedia search fallback: {e}")
 
