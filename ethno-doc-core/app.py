@@ -16,6 +16,7 @@ st.set_page_config(
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "step_1_db.sqlite"
+STEP_2_DB_PATH = BASE_DIR / "step_2_db.sqlite"
 
 GENERIC_PLANTS = [
     "Ginseng", "Licorice", "Ginger", "Cinnamon", "Peony",
@@ -42,6 +43,24 @@ def load_step_1_data() -> pd.DataFrame:
         return df
     except sqlite3.Error as e:
         # Fails gracefully if the DB exists but the 'synonyms' table does not
+        return pd.DataFrame()
+
+@st.cache_data(ttl=60)
+def load_step_2_data() -> pd.DataFrame:
+    """
+    Loads the Step 2 taxonomy extraction data from SQLite into memory.
+    If the database or table does not exist, returns an empty DataFrame.
+    """
+    if not STEP_2_DB_PATH.exists():
+        return pd.DataFrame()
+
+    try:
+        conn = sqlite3.connect(STEP_2_DB_PATH)
+        df = pd.read_sql_query("SELECT parent_synonym_id, plant_name, book_name, sub_species_discovered, scientific_name, context_paragraph FROM taxonomy", conn)
+        conn.close()
+        return df
+    except sqlite3.Error as e:
+        # Fails gracefully if the DB exists but the 'taxonomy' table does not
         return pd.DataFrame()
 
 # -------------------------------------------------------------------------
@@ -102,6 +121,32 @@ def main():
         help="Run Step 1 Extraction Engine first to unlock this feature." if not is_step_1_complete else "Initialize Step 2."
     )
 
+    df_taxonomy = load_step_2_data()
+    is_step_2_complete = not df_taxonomy.empty
+
+    if is_step_2_complete:
+        st.success("✅ Step 2 Database successfully loaded.")
+
+        # Re-use selected_plant if it exists from Step 1, otherwise provide a fallback
+        current_plant = selected_plant if is_step_1_complete else GENERIC_PLANTS[0]
+
+        filtered_taxonomy_df = df_taxonomy[df_taxonomy["plant_name"] == current_plant]
+
+        st.dataframe(
+            filtered_taxonomy_df,
+            hide_index=True,
+            use_container_width=True,
+            column_config={
+                "parent_synonym_id": "Synonym ID",
+                "plant_name": "Plant Name",
+                "book_name": "Source Book",
+                "sub_species_discovered": "Sub-species",
+                "scientific_name": "Scientific Name",
+                "context_paragraph": "Context Paragraph"
+            }
+        )
+    else:
+        st.info("ℹ️ Step 2 Database is empty. Run Step 2 Extraction Engine (engine_step_2.py) to populate.")
 
 if __name__ == "__main__":
     main()
