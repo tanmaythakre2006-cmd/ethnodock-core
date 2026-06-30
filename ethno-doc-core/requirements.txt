@@ -1,0 +1,5 @@
+streamlit==1.36.0
+pydantic==2.8.2
+httpx==0.27.0
+# sqlite3 is a standard library
+# asyncio is a standard library
